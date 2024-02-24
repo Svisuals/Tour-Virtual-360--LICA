@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 6.1.13/18080
 // Filename: AirbnbLica1.ggsk
-// Generated 2024-02-24T06:56:49
+// Generated 2024-02-24T06:57:58
 
 function pano2vrSkin(player,base) {
 	player.addVariable('indicativo', 2, false);
@@ -22077,13 +22077,7 @@ function pano2vrSkin(player,base) {
 			}
 		}
 		me._svisuals.onclick=function (e) {
-			if (
-				(
-					((player.getVariableValue('indicativo') == true))
-				)
-			) {
-				player.openUrl("https:\/\/wa.me\/+5511989533744","");
-			}
+			player.openUrl("https:\/\/wa.me\/+5511989533744","");
 		}
 		me._svisuals.onmouseover=function (e) {
 			me.elementMouseOver['svisuals']=true;

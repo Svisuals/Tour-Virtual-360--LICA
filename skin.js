@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 6.1.13/18080
-// Filename: Airbnb.ggsk
-// Generated 2024-02-24T13:34:52
+// Filename: AirbnbLica1.ggsk
+// Generated 2024-02-24T13:36:34
 
 function pano2vrSkin(player,base) {
 	player.addVariable('indicativo', 2, false);
@@ -14700,695 +14700,6 @@ function pano2vrSkin(player,base) {
 		me._serviosii.appendChild(me._image_1);
 		me._serviosi.appendChild(me._serviosii);
 		me.divSkin.appendChild(me._serviosi);
-		el=me._sobre_o_lugar=document.createElement('div');
-		el.ggId="SOBRE O LUGAR";
-		el.ggDx=0;
-		el.ggDy=0;
-		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
-		el.ggVisible=false;
-		el.className="ggskin ggskin_rectangle ";
-		el.ggType='rectangle';
-		hs ='';
-		hs+=cssPrefix + 'border-radius : 20px;';
-		hs+='border-radius : 20px;';
-		hs+='background : #5e5e5e;';
-		hs+='border : 5px solid #ffffff;';
-		hs+='cursor : default;';
-		hs+='height : 240px;';
-		hs+='left : -10000px;';
-		hs+='opacity : 0.7;';
-		hs+='position : absolute;';
-		hs+='top : -10000px;';
-		hs+='visibility : hidden;';
-		hs+='width : 402px;';
-		hs+='pointer-events:auto;';
-		el.setAttribute('style',hs);
-		el.style[domTransform + 'Origin']='50% 50%';
-		me._sobre_o_lugar.ggIsActive=function() {
-			return false;
-		}
-		el.ggElementNodeId=function() {
-			return player.getCurrentNode();
-		}
-		me._sobre_o_lugar.logicBlock_position = function() {
-			var newLogicStatePosition;
-			if (
-				((player.getViewerSize().height <= 400))
-			)
-			{
-				newLogicStatePosition = 0;
-			}
-			else if (
-				((player.getViewerSize().width < 1084))
-			)
-			{
-				newLogicStatePosition = 1;
-			}
-			else {
-				newLogicStatePosition = -1;
-			}
-			if (me._sobre_o_lugar.ggCurrentLogicStatePosition != newLogicStatePosition) {
-				me._sobre_o_lugar.ggCurrentLogicStatePosition = newLogicStatePosition;
-				me._sobre_o_lugar.style[domTransition]='left 0s, top 0s, ' + cssPrefix + 'transform 0s';
-				if (me._sobre_o_lugar.ggCurrentLogicStatePosition == 0) {
-					this.ggDx = 30;
-					this.ggDy = 10;
-					me._sobre_o_lugar.ggUpdatePosition(true);
-				}
-				else if (me._sobre_o_lugar.ggCurrentLogicStatePosition == 1) {
-					this.ggDx = 0;
-					this.ggDy = 120;
-					me._sobre_o_lugar.ggUpdatePosition(true);
-				}
-				else {
-					me._sobre_o_lugar.ggDx=0;
-					me._sobre_o_lugar.ggDy=0;
-					me._sobre_o_lugar.ggUpdatePosition(true);
-				}
-			}
-		}
-		me._sobre_o_lugar.logicBlock_scaling = function() {
-			var newLogicStateScaling;
-			if (
-				((player.getViewerSize().width < 1084))
-			)
-			{
-				newLogicStateScaling = 0;
-			}
-			else {
-				newLogicStateScaling = -1;
-			}
-			if (me._sobre_o_lugar.ggCurrentLogicStateScaling != newLogicStateScaling) {
-				me._sobre_o_lugar.ggCurrentLogicStateScaling = newLogicStateScaling;
-				me._sobre_o_lugar.style[domTransition]='left 0s, top 0s, ' + cssPrefix + 'transform 0s';
-				if (me._sobre_o_lugar.ggCurrentLogicStateScaling == 0) {
-					me._sobre_o_lugar.ggParameter.sx = 0.85;
-					me._sobre_o_lugar.ggParameter.sy = 0.85;
-					me._sobre_o_lugar.style[domTransform]=parameterToTransform(me._sobre_o_lugar.ggParameter);
-				}
-				else {
-					me._sobre_o_lugar.ggParameter.sx = 1;
-					me._sobre_o_lugar.ggParameter.sy = 1;
-					me._sobre_o_lugar.style[domTransform]=parameterToTransform(me._sobre_o_lugar.ggParameter);
-				}
-			}
-		}
-		me._sobre_o_lugar.logicBlock_visible = function() {
-			var newLogicStateVisible;
-			if (
-				((player.getVariableValue('INFO') == true))
-			)
-			{
-				newLogicStateVisible = 0;
-			}
-			else if (
-				((player.getVariableValue('INFO') == false))
-			)
-			{
-				newLogicStateVisible = 1;
-			}
-			else {
-				newLogicStateVisible = -1;
-			}
-			if (me._sobre_o_lugar.ggCurrentLogicStateVisible != newLogicStateVisible) {
-				me._sobre_o_lugar.ggCurrentLogicStateVisible = newLogicStateVisible;
-				me._sobre_o_lugar.style[domTransition]='left 0s, top 0s, ' + cssPrefix + 'transform 0s';
-				if (me._sobre_o_lugar.ggCurrentLogicStateVisible == 0) {
-					me._sobre_o_lugar.style.visibility=(Number(me._sobre_o_lugar.style.opacity)>0||!me._sobre_o_lugar.style.opacity)?'inherit':'hidden';
-					me._sobre_o_lugar.ggVisible=true;
-				}
-				else if (me._sobre_o_lugar.ggCurrentLogicStateVisible == 1) {
-					me._sobre_o_lugar.style.visibility="hidden";
-					me._sobre_o_lugar.ggVisible=false;
-				}
-				else {
-					me._sobre_o_lugar.style.visibility="hidden";
-					me._sobre_o_lugar.ggVisible=false;
-				}
-			}
-		}
-		me._sobre_o_lugar.ggUpdatePosition=function (useTransition) {
-			if (useTransition==='undefined') {
-				useTransition = false;
-			}
-			if (!useTransition) {
-				this.style[domTransition]='none';
-			}
-			if (this.parentNode) {
-				var pw=this.parentNode.clientWidth;
-				var w=this.offsetWidth;
-					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
-				var ph=this.parentNode.clientHeight;
-				var h=this.offsetHeight;
-					this.style.top=(this.ggDy + ph/2 - h/2) + 'px';
-			}
-		}
-		el=me._sobre_este_lugari=document.createElement('div');
-		el.ggId="SOBRE ESTE LUGAR-I";
-		el.ggDx=0;
-		el.ggDy=-1;
-		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
-		el.ggVisible=true;
-		el.className="ggskin ggskin_container ";
-		el.ggType='container';
-		hs ='';
-		hs+='height : 236px;';
-		hs+='left : -10000px;';
-		hs+='position : absolute;';
-		hs+='top : -10000px;';
-		hs+='visibility : inherit;';
-		hs+='width : 407px;';
-		hs+='pointer-events:none;';
-		el.setAttribute('style',hs);
-		el.style[domTransform + 'Origin']='50% 50%';
-		me._sobre_este_lugari.ggIsActive=function() {
-			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
-				return this.parentNode.ggIsActive();
-			}
-			return false;
-		}
-		el.ggElementNodeId=function() {
-			if ((this.parentNode) && (this.parentNode.ggElementNodeId)) {
-				return this.parentNode.ggElementNodeId();
-			}
-			return player.getCurrentNode();
-		}
-		me._sobre_este_lugari.ggUpdatePosition=function (useTransition) {
-			if (useTransition==='undefined') {
-				useTransition = false;
-			}
-			if (!useTransition) {
-				this.style[domTransition]='none';
-			}
-			if (this.parentNode) {
-				var pw=this.parentNode.clientWidth;
-				var w=this.offsetWidth;
-					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
-				var ph=this.parentNode.clientHeight;
-				var h=this.offsetHeight;
-					this.style.top=(this.ggDy + ph/2 - h/2) + 'px';
-			}
-		}
-		el=me._sobre_o_lugar0=document.createElement('div');
-		els=me._sobre_o_lugar0__text=document.createElement('div');
-		el.className='ggskin ggskin_textdiv';
-		el.ggTextDiv=els;
-		el.ggId="Sobre o lugar";
-		el.ggDx=9;
-		el.ggDy=-73;
-		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
-		el.ggVisible=true;
-		el.className="ggskin ggskin_text tooltip";
-		el.ggType='text';
-		hs ='';
-		hs+='height : 78px;';
-		hs+='left : -10000px;';
-		hs+='position : absolute;';
-		hs+='top : -10000px;';
-		hs+='visibility : inherit;';
-		hs+='width : 374px;';
-		hs+='pointer-events:auto;';
-		el.setAttribute('style',hs);
-		el.style[domTransform + 'Origin']='50% 50%';
-		hs ='position:absolute;';
-		hs += 'box-sizing: border-box;';
-		hs+='cursor: default;';
-		hs+='left: 0px;';
-		hs+='top:  0px;';
-		hs+='width: 376px;';
-		hs+='height: auto;';
-		hs+='background: #ffffff;';
-		hs+='background: rgba(255,255,255,0);';
-		hs+='border: 1px solid #55aa7f;';
-		hs+='border: 1px solid rgba(85,170,127,0);';
-		hs+=cssPrefix + 'background-clip: padding-box;';
-		hs+='background-clip: padding-box;';
-		hs+='border-radius: 10px;';
-		hs+=cssPrefix + 'border-radius: 10px;';
-		hs+='color: rgba(255,255,255,1);';
-		hs+='text-align: justify;';
-		hs+='white-space: normal;';
-		hs+='padding: 2px 3px 2px 3px;';
-		hs+='overflow: hidden;';
-		hs+='overflow-y: auto;';
-		els.setAttribute('style',hs);
-		els.innerHTML="Quarto confort\xe1vel para  pessoa en rua residencia<br\/>com vigil\xe1ncia privada em bairro nobre de S\xe3o Paulo,<br\/>pr\xf3ximo \xe0 esta\xe7\xf5es de metr\xf4 e trem, Consulado americano,<br\/>shopping centers, restaurantes e anchonetes<br\/>";
-		el.appendChild(els);
-		me._sobre_o_lugar0.ggIsActive=function() {
-			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
-				return this.parentNode.ggIsActive();
-			}
-			return false;
-		}
-		el.ggElementNodeId=function() {
-			if ((this.parentNode) && (this.parentNode.ggElementNodeId)) {
-				return this.parentNode.ggElementNodeId();
-			}
-			return player.getCurrentNode();
-		}
-		me._sobre_o_lugar0.logicBlock_text = function() {
-			var newLogicStateText;
-			if (
-				((player.getVariableValue('POR') == true))
-			)
-			{
-				newLogicStateText = 0;
-			}
-			else if (
-				((player.getVariableValue('ENG') == true))
-			)
-			{
-				newLogicStateText = 1;
-			}
-			else if (
-				((player.getVariableValue('ESP') == true))
-			)
-			{
-				newLogicStateText = 2;
-			}
-			else {
-				newLogicStateText = -1;
-			}
-			if (me._sobre_o_lugar0.ggCurrentLogicStateText != newLogicStateText) {
-				me._sobre_o_lugar0.ggCurrentLogicStateText = newLogicStateText;
-				me._sobre_o_lugar0.style[domTransition]='';
-				if (me._sobre_o_lugar0.ggCurrentLogicStateText == 0) {
-					me._sobre_o_lugar0.ggText="Quarto confort\xe1vel para pessoa en rua residencia com vigil\xe1ncia privada em bairro nobre de S\xe3o Paulo, pr\xf3ximo \xe0 esta\xe7\xf5es de metr\xf4 e trem, Consulado americano,shopping centers, restaurantes e anchonetes";
-					me._sobre_o_lugar0__text.innerHTML=me._sobre_o_lugar0.ggText;
-					if (me._sobre_o_lugar0.ggUpdateText) {
-					me._sobre_o_lugar0.ggUpdateText=function() {
-						var hs="Quarto confort\xe1vel para pessoa en rua residencia com vigil\xe1ncia privada em bairro nobre de S\xe3o Paulo, pr\xf3ximo \xe0 esta\xe7\xf5es de metr\xf4 e trem, Consulado americano,shopping centers, restaurantes e anchonetes";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._sobre_o_lugar0.ggUpdatePosition) me._sobre_o_lugar0.ggUpdatePosition();
-					}
-				}
-				else if (me._sobre_o_lugar0.ggCurrentLogicStateText == 1) {
-					me._sobre_o_lugar0.ggText="Confortable room for people on a \nresidential street with private sureveillance\nin an upscale neighborhood of S\xe3o Paulo,\nclose to subway and train stations, American\nConsulate, shopping centers, restaurants and\neateries";
-					me._sobre_o_lugar0__text.innerHTML=me._sobre_o_lugar0.ggText;
-					if (me._sobre_o_lugar0.ggUpdateText) {
-					me._sobre_o_lugar0.ggUpdateText=function() {
-						var hs="Confortable room for people on a \nresidential street with private sureveillance\nin an upscale neighborhood of S\xe3o Paulo,\nclose to subway and train stations, American\nConsulate, shopping centers, restaurants and\neateries";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._sobre_o_lugar0.ggUpdatePosition) me._sobre_o_lugar0.ggUpdatePosition();
-					}
-				}
-				else if (me._sobre_o_lugar0.ggCurrentLogicStateText == 2) {
-					me._sobre_o_lugar0.ggText="C\xf3moda habitaci\xf3n para personas en \nuna calle residencial con vigilancia privada\nen un barrio exclusivo de San Pablo, cerca\nde esraciones de metro y tren, Consulado \nAmericano, centro comerciales y restaurantes";
-					me._sobre_o_lugar0__text.innerHTML=me._sobre_o_lugar0.ggText;
-					if (me._sobre_o_lugar0.ggUpdateText) {
-					me._sobre_o_lugar0.ggUpdateText=function() {
-						var hs="C\xf3moda habitaci\xf3n para personas en \nuna calle residencial con vigilancia privada\nen un barrio exclusivo de San Pablo, cerca\nde esraciones de metro y tren, Consulado \nAmericano, centro comerciales y restaurantes";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._sobre_o_lugar0.ggUpdatePosition) me._sobre_o_lugar0.ggUpdatePosition();
-					}
-				}
-				else {
-					me._sobre_o_lugar0.ggText="Quarto confort\xe1vel para  pessoa en rua residencia\ncom vigil\xe1ncia privada em bairro nobre de S\xe3o Paulo,\npr\xf3ximo \xe0 esta\xe7\xf5es de metr\xf4 e trem, Consulado americano,\nshopping centers, restaurantes e anchonetes\n";
-					me._sobre_o_lugar0__text.innerHTML=me._sobre_o_lugar0.ggText;
-					if (me._sobre_o_lugar0.ggUpdateText) {
-					me._sobre_o_lugar0.ggUpdateText=function() {
-						var hs="Quarto confort\xe1vel para  pessoa en rua residencia\ncom vigil\xe1ncia privada em bairro nobre de S\xe3o Paulo,\npr\xf3ximo \xe0 esta\xe7\xf5es de metr\xf4 e trem, Consulado americano,\nshopping centers, restaurantes e anchonetes\n";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._sobre_o_lugar0.ggUpdatePosition) me._sobre_o_lugar0.ggUpdatePosition();
-					}
-				}
-			}
-		}
-		me._sobre_o_lugar0.ggUpdatePosition=function (useTransition) {
-			if (useTransition==='undefined') {
-				useTransition = false;
-			}
-			if (!useTransition) {
-				this.style[domTransition]='none';
-			}
-			if (this.parentNode) {
-				var pw=this.parentNode.clientWidth;
-				var w=this.offsetWidth + 2;
-					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
-				var ph=this.parentNode.clientHeight;
-				var h=this.offsetHeight;
-					this.style.top=(this.ggDy + ph/2 - h/2) + 'px';
-			}
-		}
-		me._sobre_este_lugari.appendChild(me._sobre_o_lugar0);
-		el=me._espao_de_trabalho_exclusivo=document.createElement('div');
-		els=me._espao_de_trabalho_exclusivo__text=document.createElement('div');
-		el.className='ggskin ggskin_textdiv';
-		el.ggTextDiv=els;
-		el.ggId="Espa\xe7o de trabalho exclusivo";
-		el.ggDx=-9;
-		el.ggDy=13;
-		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
-		el.ggVisible=true;
-		el.className="ggskin ggskin_text tooltip";
-		el.ggType='text';
-		hs ='';
-		hs+='height : 72px;';
-		hs+='left : -10000px;';
-		hs+='position : absolute;';
-		hs+='top : -10000px;';
-		hs+='visibility : inherit;';
-		hs+='width : 333px;';
-		hs+='pointer-events:auto;';
-		el.setAttribute('style',hs);
-		el.style[domTransform + 'Origin']='50% 50%';
-		hs ='position:absolute;';
-		hs += 'box-sizing: border-box;';
-		hs+='cursor: default;';
-		hs+='left: 0px;';
-		hs+='top:  0px;';
-		hs+='width: 335px;';
-		hs+='height: auto;';
-		hs+='background: #ffffff;';
-		hs+='background: rgba(255,255,255,0);';
-		hs+='border: 1px solid #55aa7f;';
-		hs+='border: 1px solid rgba(85,170,127,0);';
-		hs+=cssPrefix + 'background-clip: padding-box;';
-		hs+='background-clip: padding-box;';
-		hs+='border-radius: 10px;';
-		hs+=cssPrefix + 'border-radius: 10px;';
-		hs+='color: rgba(255,255,255,1);';
-		hs+='text-align: justify;';
-		hs+='white-space: normal;';
-		hs+='padding: 2px 3px 2px 3px;';
-		hs+='overflow: hidden;';
-		hs+='overflow-y: auto;';
-		els.setAttribute('style',hs);
-		els.innerHTML="O espa\xe7o<br\/>Quarto situado nos fundos da resid\xeancia. <br\/>Ambiente com privacidade e entrada independente";
-		el.appendChild(els);
-		me._espao_de_trabalho_exclusivo.ggIsActive=function() {
-			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
-				return this.parentNode.ggIsActive();
-			}
-			return false;
-		}
-		el.ggElementNodeId=function() {
-			if ((this.parentNode) && (this.parentNode.ggElementNodeId)) {
-				return this.parentNode.ggElementNodeId();
-			}
-			return player.getCurrentNode();
-		}
-		me._espao_de_trabalho_exclusivo.logicBlock_text = function() {
-			var newLogicStateText;
-			if (
-				((player.getVariableValue('POR') == true))
-			)
-			{
-				newLogicStateText = 0;
-			}
-			else if (
-				((player.getVariableValue('ENG') == true))
-			)
-			{
-				newLogicStateText = 1;
-			}
-			else if (
-				((player.getVariableValue('ESP') == true))
-			)
-			{
-				newLogicStateText = 2;
-			}
-			else {
-				newLogicStateText = -1;
-			}
-			if (me._espao_de_trabalho_exclusivo.ggCurrentLogicStateText != newLogicStateText) {
-				me._espao_de_trabalho_exclusivo.ggCurrentLogicStateText = newLogicStateText;
-				me._espao_de_trabalho_exclusivo.style[domTransition]='';
-				if (me._espao_de_trabalho_exclusivo.ggCurrentLogicStateText == 0) {
-					me._espao_de_trabalho_exclusivo.ggText="O espa\xe7o\nQuarto situado nos fundos da resid\xeancia. \nAmbiente com privacidade e entrada independente";
-					me._espao_de_trabalho_exclusivo__text.innerHTML=me._espao_de_trabalho_exclusivo.ggText;
-					if (me._espao_de_trabalho_exclusivo.ggUpdateText) {
-					me._espao_de_trabalho_exclusivo.ggUpdateText=function() {
-						var hs="O espa\xe7o\nQuarto situado nos fundos da resid\xeancia. \nAmbiente com privacidade e entrada independente";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._espao_de_trabalho_exclusivo.ggUpdatePosition) me._espao_de_trabalho_exclusivo.ggUpdatePosition();
-					}
-				}
-				else if (me._espao_de_trabalho_exclusivo.ggCurrentLogicStateText == 1) {
-					me._espao_de_trabalho_exclusivo.ggText="The space\nRoom located at the back of the \nresidence, Privacy environment\nand independent entrance";
-					me._espao_de_trabalho_exclusivo__text.innerHTML=me._espao_de_trabalho_exclusivo.ggText;
-					if (me._espao_de_trabalho_exclusivo.ggUpdateText) {
-					me._espao_de_trabalho_exclusivo.ggUpdateText=function() {
-						var hs="The space\nRoom located at the back of the \nresidence, Privacy environment\nand independent entrance";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._espao_de_trabalho_exclusivo.ggUpdatePosition) me._espao_de_trabalho_exclusivo.ggUpdatePosition();
-					}
-				}
-				else if (me._espao_de_trabalho_exclusivo.ggCurrentLogicStateText == 2) {
-					me._espao_de_trabalho_exclusivo.ggText="El espacio\nCuarto situado en el fondo de la \nresidencia. Ambiente con privacidad\ne entrada independiente";
-					me._espao_de_trabalho_exclusivo__text.innerHTML=me._espao_de_trabalho_exclusivo.ggText;
-					if (me._espao_de_trabalho_exclusivo.ggUpdateText) {
-					me._espao_de_trabalho_exclusivo.ggUpdateText=function() {
-						var hs="El espacio\nCuarto situado en el fondo de la \nresidencia. Ambiente con privacidad\ne entrada independiente";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._espao_de_trabalho_exclusivo.ggUpdatePosition) me._espao_de_trabalho_exclusivo.ggUpdatePosition();
-					}
-				}
-				else {
-					me._espao_de_trabalho_exclusivo.ggText="O espa\xe7o\nQuarto situado nos fundos da resid\xeancia. \nAmbiente com privacidade e entrada independente";
-					me._espao_de_trabalho_exclusivo__text.innerHTML=me._espao_de_trabalho_exclusivo.ggText;
-					if (me._espao_de_trabalho_exclusivo.ggUpdateText) {
-					me._espao_de_trabalho_exclusivo.ggUpdateText=function() {
-						var hs="O espa\xe7o\nQuarto situado nos fundos da resid\xeancia. \nAmbiente com privacidade e entrada independente";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._espao_de_trabalho_exclusivo.ggUpdatePosition) me._espao_de_trabalho_exclusivo.ggUpdatePosition();
-					}
-				}
-			}
-		}
-		me._espao_de_trabalho_exclusivo.ggUpdatePosition=function (useTransition) {
-			if (useTransition==='undefined') {
-				useTransition = false;
-			}
-			if (!useTransition) {
-				this.style[domTransition]='none';
-			}
-			if (this.parentNode) {
-				var pw=this.parentNode.clientWidth;
-				var w=this.offsetWidth + 2;
-					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
-				var ph=this.parentNode.clientHeight;
-				var h=this.offsetHeight;
-					this.style.top=(this.ggDy + ph/2 - h/2) + 'px';
-			}
-		}
-		me._sobre_este_lugari.appendChild(me._espao_de_trabalho_exclusivo);
-		el=me._durante_sua_estadia=document.createElement('div');
-		els=me._durante_sua_estadia__text=document.createElement('div');
-		el.className='ggskin ggskin_textdiv';
-		el.ggTextDiv=els;
-		el.ggId="Durante sua estadia";
-		el.ggDx=-12;
-		el.ggDy=80;
-		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
-		el.ggVisible=true;
-		el.className="ggskin ggskin_text tooltip";
-		el.ggType='text';
-		hs ='';
-		hs+='height : 72px;';
-		hs+='left : -10000px;';
-		hs+='position : absolute;';
-		hs+='top : -10000px;';
-		hs+='visibility : inherit;';
-		hs+='width : 333px;';
-		hs+='pointer-events:auto;';
-		el.setAttribute('style',hs);
-		el.style[domTransform + 'Origin']='50% 50%';
-		hs ='position:absolute;';
-		hs += 'box-sizing: border-box;';
-		hs+='cursor: default;';
-		hs+='left: 0px;';
-		hs+='top:  0px;';
-		hs+='width: 335px;';
-		hs+='height: auto;';
-		hs+='background: #ffffff;';
-		hs+='background: rgba(255,255,255,0);';
-		hs+='border: 1px solid #55aa7f;';
-		hs+='border: 1px solid rgba(85,170,127,0);';
-		hs+=cssPrefix + 'background-clip: padding-box;';
-		hs+='background-clip: padding-box;';
-		hs+='border-radius: 10px;';
-		hs+=cssPrefix + 'border-radius: 10px;';
-		hs+='color: rgba(255,255,255,1);';
-		hs+='text-align: justify;';
-		hs+='white-space: normal;';
-		hs+='padding: 2px 3px 2px 3px;';
-		hs+='overflow: hidden;';
-		hs+='overflow-y: auto;';
-		els.setAttribute('style',hs);
-		els.innerHTML="Durante sua estadia<br\/>Eu moro na resid\xeancia e estarei dispon\xedvel para <br\/>tirar d\xfavidas pessoalmente ou por mensagem";
-		el.appendChild(els);
-		me._durante_sua_estadia.ggIsActive=function() {
-			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
-				return this.parentNode.ggIsActive();
-			}
-			return false;
-		}
-		el.ggElementNodeId=function() {
-			if ((this.parentNode) && (this.parentNode.ggElementNodeId)) {
-				return this.parentNode.ggElementNodeId();
-			}
-			return player.getCurrentNode();
-		}
-		me._durante_sua_estadia.logicBlock_text = function() {
-			var newLogicStateText;
-			if (
-				((player.getVariableValue('POR') == true))
-			)
-			{
-				newLogicStateText = 0;
-			}
-			else if (
-				((player.getVariableValue('ENG') == true))
-			)
-			{
-				newLogicStateText = 1;
-			}
-			else if (
-				((player.getVariableValue('ESP') == true))
-			)
-			{
-				newLogicStateText = 2;
-			}
-			else {
-				newLogicStateText = -1;
-			}
-			if (me._durante_sua_estadia.ggCurrentLogicStateText != newLogicStateText) {
-				me._durante_sua_estadia.ggCurrentLogicStateText = newLogicStateText;
-				me._durante_sua_estadia.style[domTransition]='';
-				if (me._durante_sua_estadia.ggCurrentLogicStateText == 0) {
-					me._durante_sua_estadia.ggText="Durante sua estadia\nEu moro na resid\xeancia e estarei dispon\xedvel para \ntirar d\xfavidas pessoalmente ou por mensagem";
-					me._durante_sua_estadia__text.innerHTML=me._durante_sua_estadia.ggText;
-					if (me._durante_sua_estadia.ggUpdateText) {
-					me._durante_sua_estadia.ggUpdateText=function() {
-						var hs="Durante sua estadia\nEu moro na resid\xeancia e estarei dispon\xedvel para \ntirar d\xfavidas pessoalmente ou por mensagem";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._durante_sua_estadia.ggUpdatePosition) me._durante_sua_estadia.ggUpdatePosition();
-					}
-				}
-				else if (me._durante_sua_estadia.ggCurrentLogicStateText == 1) {
-					me._durante_sua_estadia.ggText="During your stay I live in the residence \nand will be availablefor ask questions \nin person or by message";
-					me._durante_sua_estadia__text.innerHTML=me._durante_sua_estadia.ggText;
-					if (me._durante_sua_estadia.ggUpdateText) {
-					me._durante_sua_estadia.ggUpdateText=function() {
-						var hs="During your stay I live in the residence \nand will be availablefor ask questions \nin person or by message";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._durante_sua_estadia.ggUpdatePosition) me._durante_sua_estadia.ggUpdatePosition();
-					}
-				}
-				else if (me._durante_sua_estadia.ggCurrentLogicStateText == 2) {
-					me._durante_sua_estadia.ggText="Durante tu estadia,vivo en la residencia\ny estar\xe9 disponible para hacer preguntas\nen persona o por mensaje";
-					me._durante_sua_estadia__text.innerHTML=me._durante_sua_estadia.ggText;
-					if (me._durante_sua_estadia.ggUpdateText) {
-					me._durante_sua_estadia.ggUpdateText=function() {
-						var hs="Durante tu estadia,vivo en la residencia\ny estar\xe9 disponible para hacer preguntas\nen persona o por mensaje";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._durante_sua_estadia.ggUpdatePosition) me._durante_sua_estadia.ggUpdatePosition();
-					}
-				}
-				else {
-					me._durante_sua_estadia.ggText="Durante sua estadia\nEu moro na resid\xeancia e estarei dispon\xedvel para \ntirar d\xfavidas pessoalmente ou por mensagem";
-					me._durante_sua_estadia__text.innerHTML=me._durante_sua_estadia.ggText;
-					if (me._durante_sua_estadia.ggUpdateText) {
-					me._durante_sua_estadia.ggUpdateText=function() {
-						var hs="Durante sua estadia\nEu moro na resid\xeancia e estarei dispon\xedvel para \ntirar d\xfavidas pessoalmente ou por mensagem";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._durante_sua_estadia.ggUpdatePosition) me._durante_sua_estadia.ggUpdatePosition();
-					}
-				}
-			}
-		}
-		me._durante_sua_estadia.ggUpdatePosition=function (useTransition) {
-			if (useTransition==='undefined') {
-				useTransition = false;
-			}
-			if (!useTransition) {
-				this.style[domTransition]='none';
-			}
-			if (this.parentNode) {
-				var pw=this.parentNode.clientWidth;
-				var w=this.offsetWidth + 2;
-					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
-				var ph=this.parentNode.clientHeight;
-				var h=this.offsetHeight;
-					this.style.top=(this.ggDy + ph/2 - h/2) + 'px';
-			}
-		}
-		me._sobre_este_lugari.appendChild(me._durante_sua_estadia);
-		me._sobre_o_lugar.appendChild(me._sobre_este_lugari);
-		me.divSkin.appendChild(me._sobre_o_lugar);
 		el=me._info=document.createElement('div');
 		el.ggId="INFO";
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
@@ -17879,6 +17190,695 @@ function pano2vrSkin(player,base) {
 		}
 		me._info.appendChild(me._no_inclusob);
 		me.divSkin.appendChild(me._info);
+		el=me._sobre_o_lugar=document.createElement('div');
+		el.ggId="SOBRE O LUGAR";
+		el.ggDx=0;
+		el.ggDy=0;
+		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
+		el.ggVisible=false;
+		el.className="ggskin ggskin_rectangle ";
+		el.ggType='rectangle';
+		hs ='';
+		hs+=cssPrefix + 'border-radius : 20px;';
+		hs+='border-radius : 20px;';
+		hs+='background : #5e5e5e;';
+		hs+='border : 5px solid #ffffff;';
+		hs+='cursor : default;';
+		hs+='height : 240px;';
+		hs+='left : -10000px;';
+		hs+='opacity : 0.7;';
+		hs+='position : absolute;';
+		hs+='top : -10000px;';
+		hs+='visibility : hidden;';
+		hs+='width : 402px;';
+		hs+='pointer-events:auto;';
+		el.setAttribute('style',hs);
+		el.style[domTransform + 'Origin']='50% 50%';
+		me._sobre_o_lugar.ggIsActive=function() {
+			return false;
+		}
+		el.ggElementNodeId=function() {
+			return player.getCurrentNode();
+		}
+		me._sobre_o_lugar.logicBlock_position = function() {
+			var newLogicStatePosition;
+			if (
+				((player.getViewerSize().height <= 400))
+			)
+			{
+				newLogicStatePosition = 0;
+			}
+			else if (
+				((player.getViewerSize().width < 1084))
+			)
+			{
+				newLogicStatePosition = 1;
+			}
+			else {
+				newLogicStatePosition = -1;
+			}
+			if (me._sobre_o_lugar.ggCurrentLogicStatePosition != newLogicStatePosition) {
+				me._sobre_o_lugar.ggCurrentLogicStatePosition = newLogicStatePosition;
+				me._sobre_o_lugar.style[domTransition]='left 0s, top 0s, ' + cssPrefix + 'transform 0s';
+				if (me._sobre_o_lugar.ggCurrentLogicStatePosition == 0) {
+					this.ggDx = 30;
+					this.ggDy = 10;
+					me._sobre_o_lugar.ggUpdatePosition(true);
+				}
+				else if (me._sobre_o_lugar.ggCurrentLogicStatePosition == 1) {
+					this.ggDx = 0;
+					this.ggDy = 120;
+					me._sobre_o_lugar.ggUpdatePosition(true);
+				}
+				else {
+					me._sobre_o_lugar.ggDx=0;
+					me._sobre_o_lugar.ggDy=0;
+					me._sobre_o_lugar.ggUpdatePosition(true);
+				}
+			}
+		}
+		me._sobre_o_lugar.logicBlock_scaling = function() {
+			var newLogicStateScaling;
+			if (
+				((player.getViewerSize().width < 1084))
+			)
+			{
+				newLogicStateScaling = 0;
+			}
+			else {
+				newLogicStateScaling = -1;
+			}
+			if (me._sobre_o_lugar.ggCurrentLogicStateScaling != newLogicStateScaling) {
+				me._sobre_o_lugar.ggCurrentLogicStateScaling = newLogicStateScaling;
+				me._sobre_o_lugar.style[domTransition]='left 0s, top 0s, ' + cssPrefix + 'transform 0s';
+				if (me._sobre_o_lugar.ggCurrentLogicStateScaling == 0) {
+					me._sobre_o_lugar.ggParameter.sx = 0.85;
+					me._sobre_o_lugar.ggParameter.sy = 0.85;
+					me._sobre_o_lugar.style[domTransform]=parameterToTransform(me._sobre_o_lugar.ggParameter);
+				}
+				else {
+					me._sobre_o_lugar.ggParameter.sx = 1;
+					me._sobre_o_lugar.ggParameter.sy = 1;
+					me._sobre_o_lugar.style[domTransform]=parameterToTransform(me._sobre_o_lugar.ggParameter);
+				}
+			}
+		}
+		me._sobre_o_lugar.logicBlock_visible = function() {
+			var newLogicStateVisible;
+			if (
+				((player.getVariableValue('INFO') == true))
+			)
+			{
+				newLogicStateVisible = 0;
+			}
+			else if (
+				((player.getVariableValue('INFO') == false))
+			)
+			{
+				newLogicStateVisible = 1;
+			}
+			else {
+				newLogicStateVisible = -1;
+			}
+			if (me._sobre_o_lugar.ggCurrentLogicStateVisible != newLogicStateVisible) {
+				me._sobre_o_lugar.ggCurrentLogicStateVisible = newLogicStateVisible;
+				me._sobre_o_lugar.style[domTransition]='left 0s, top 0s, ' + cssPrefix + 'transform 0s';
+				if (me._sobre_o_lugar.ggCurrentLogicStateVisible == 0) {
+					me._sobre_o_lugar.style.visibility=(Number(me._sobre_o_lugar.style.opacity)>0||!me._sobre_o_lugar.style.opacity)?'inherit':'hidden';
+					me._sobre_o_lugar.ggVisible=true;
+				}
+				else if (me._sobre_o_lugar.ggCurrentLogicStateVisible == 1) {
+					me._sobre_o_lugar.style.visibility="hidden";
+					me._sobre_o_lugar.ggVisible=false;
+				}
+				else {
+					me._sobre_o_lugar.style.visibility="hidden";
+					me._sobre_o_lugar.ggVisible=false;
+				}
+			}
+		}
+		me._sobre_o_lugar.ggUpdatePosition=function (useTransition) {
+			if (useTransition==='undefined') {
+				useTransition = false;
+			}
+			if (!useTransition) {
+				this.style[domTransition]='none';
+			}
+			if (this.parentNode) {
+				var pw=this.parentNode.clientWidth;
+				var w=this.offsetWidth;
+					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
+				var ph=this.parentNode.clientHeight;
+				var h=this.offsetHeight;
+					this.style.top=(this.ggDy + ph/2 - h/2) + 'px';
+			}
+		}
+		el=me._sobre_este_lugari=document.createElement('div');
+		el.ggId="SOBRE ESTE LUGAR-I";
+		el.ggDx=0;
+		el.ggDy=0;
+		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
+		el.ggVisible=true;
+		el.className="ggskin ggskin_container ";
+		el.ggType='container';
+		hs ='';
+		hs+='height : 236px;';
+		hs+='left : -10000px;';
+		hs+='position : absolute;';
+		hs+='top : -10000px;';
+		hs+='visibility : inherit;';
+		hs+='width : 407px;';
+		hs+='pointer-events:none;';
+		el.setAttribute('style',hs);
+		el.style[domTransform + 'Origin']='50% 50%';
+		me._sobre_este_lugari.ggIsActive=function() {
+			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
+				return this.parentNode.ggIsActive();
+			}
+			return false;
+		}
+		el.ggElementNodeId=function() {
+			if ((this.parentNode) && (this.parentNode.ggElementNodeId)) {
+				return this.parentNode.ggElementNodeId();
+			}
+			return player.getCurrentNode();
+		}
+		me._sobre_este_lugari.ggUpdatePosition=function (useTransition) {
+			if (useTransition==='undefined') {
+				useTransition = false;
+			}
+			if (!useTransition) {
+				this.style[domTransition]='none';
+			}
+			if (this.parentNode) {
+				var pw=this.parentNode.clientWidth;
+				var w=this.offsetWidth;
+					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
+				var ph=this.parentNode.clientHeight;
+				var h=this.offsetHeight;
+					this.style.top=(this.ggDy + ph/2 - h/2) + 'px';
+			}
+		}
+		el=me._sobre_o_lugar0=document.createElement('div');
+		els=me._sobre_o_lugar0__text=document.createElement('div');
+		el.className='ggskin ggskin_textdiv';
+		el.ggTextDiv=els;
+		el.ggId="Sobre o lugar";
+		el.ggDx=9;
+		el.ggDy=-72;
+		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
+		el.ggVisible=true;
+		el.className="ggskin ggskin_text tooltip";
+		el.ggType='text';
+		hs ='';
+		hs+='height : 78px;';
+		hs+='left : -10000px;';
+		hs+='position : absolute;';
+		hs+='top : -10000px;';
+		hs+='visibility : inherit;';
+		hs+='width : 374px;';
+		hs+='pointer-events:auto;';
+		el.setAttribute('style',hs);
+		el.style[domTransform + 'Origin']='50% 50%';
+		hs ='position:absolute;';
+		hs += 'box-sizing: border-box;';
+		hs+='cursor: default;';
+		hs+='left: 0px;';
+		hs+='top:  0px;';
+		hs+='width: 376px;';
+		hs+='height: auto;';
+		hs+='background: #ffffff;';
+		hs+='background: rgba(255,255,255,0);';
+		hs+='border: 1px solid #55aa7f;';
+		hs+='border: 1px solid rgba(85,170,127,0);';
+		hs+=cssPrefix + 'background-clip: padding-box;';
+		hs+='background-clip: padding-box;';
+		hs+='border-radius: 10px;';
+		hs+=cssPrefix + 'border-radius: 10px;';
+		hs+='color: rgba(255,255,255,1);';
+		hs+='text-align: justify;';
+		hs+='white-space: normal;';
+		hs+='padding: 2px 3px 2px 3px;';
+		hs+='overflow: hidden;';
+		hs+='overflow-y: auto;';
+		els.setAttribute('style',hs);
+		els.innerHTML="Quarto confort\xe1vel para  pessoa en rua residencia<br\/>com vigil\xe1ncia privada em bairro nobre de S\xe3o Paulo,<br\/>pr\xf3ximo \xe0 esta\xe7\xf5es de metr\xf4 e trem, Consulado americano,<br\/>shopping centers, restaurantes e anchonetes<br\/>";
+		el.appendChild(els);
+		me._sobre_o_lugar0.ggIsActive=function() {
+			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
+				return this.parentNode.ggIsActive();
+			}
+			return false;
+		}
+		el.ggElementNodeId=function() {
+			if ((this.parentNode) && (this.parentNode.ggElementNodeId)) {
+				return this.parentNode.ggElementNodeId();
+			}
+			return player.getCurrentNode();
+		}
+		me._sobre_o_lugar0.logicBlock_text = function() {
+			var newLogicStateText;
+			if (
+				((player.getVariableValue('POR') == true))
+			)
+			{
+				newLogicStateText = 0;
+			}
+			else if (
+				((player.getVariableValue('ENG') == true))
+			)
+			{
+				newLogicStateText = 1;
+			}
+			else if (
+				((player.getVariableValue('ESP') == true))
+			)
+			{
+				newLogicStateText = 2;
+			}
+			else {
+				newLogicStateText = -1;
+			}
+			if (me._sobre_o_lugar0.ggCurrentLogicStateText != newLogicStateText) {
+				me._sobre_o_lugar0.ggCurrentLogicStateText = newLogicStateText;
+				me._sobre_o_lugar0.style[domTransition]='';
+				if (me._sobre_o_lugar0.ggCurrentLogicStateText == 0) {
+					me._sobre_o_lugar0.ggText="Quarto confort\xe1vel para pessoa en rua residencia com vigil\xe1ncia privada em bairro nobre de S\xe3o Paulo, pr\xf3ximo \xe0 esta\xe7\xf5es de metr\xf4 e trem, Consulado americano,shopping centers, restaurantes e anchonetes";
+					me._sobre_o_lugar0__text.innerHTML=me._sobre_o_lugar0.ggText;
+					if (me._sobre_o_lugar0.ggUpdateText) {
+					me._sobre_o_lugar0.ggUpdateText=function() {
+						var hs="Quarto confort\xe1vel para pessoa en rua residencia com vigil\xe1ncia privada em bairro nobre de S\xe3o Paulo, pr\xf3ximo \xe0 esta\xe7\xf5es de metr\xf4 e trem, Consulado americano,shopping centers, restaurantes e anchonetes";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._sobre_o_lugar0.ggUpdatePosition) me._sobre_o_lugar0.ggUpdatePosition();
+					}
+				}
+				else if (me._sobre_o_lugar0.ggCurrentLogicStateText == 1) {
+					me._sobre_o_lugar0.ggText="Confortable room for people on a \nresidential street with private sureveillance\nin an upscale neighborhood of S\xe3o Paulo,\nclose to subway and train stations, American\nConsulate, shopping centers, restaurants and\neateries";
+					me._sobre_o_lugar0__text.innerHTML=me._sobre_o_lugar0.ggText;
+					if (me._sobre_o_lugar0.ggUpdateText) {
+					me._sobre_o_lugar0.ggUpdateText=function() {
+						var hs="Confortable room for people on a \nresidential street with private sureveillance\nin an upscale neighborhood of S\xe3o Paulo,\nclose to subway and train stations, American\nConsulate, shopping centers, restaurants and\neateries";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._sobre_o_lugar0.ggUpdatePosition) me._sobre_o_lugar0.ggUpdatePosition();
+					}
+				}
+				else if (me._sobre_o_lugar0.ggCurrentLogicStateText == 2) {
+					me._sobre_o_lugar0.ggText="C\xf3moda habitaci\xf3n para personas en \nuna calle residencial con vigilancia privada\nen un barrio exclusivo de San Pablo, cerca\nde esraciones de metro y tren, Consulado \nAmericano, centro comerciales y restaurantes";
+					me._sobre_o_lugar0__text.innerHTML=me._sobre_o_lugar0.ggText;
+					if (me._sobre_o_lugar0.ggUpdateText) {
+					me._sobre_o_lugar0.ggUpdateText=function() {
+						var hs="C\xf3moda habitaci\xf3n para personas en \nuna calle residencial con vigilancia privada\nen un barrio exclusivo de San Pablo, cerca\nde esraciones de metro y tren, Consulado \nAmericano, centro comerciales y restaurantes";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._sobre_o_lugar0.ggUpdatePosition) me._sobre_o_lugar0.ggUpdatePosition();
+					}
+				}
+				else {
+					me._sobre_o_lugar0.ggText="Quarto confort\xe1vel para  pessoa en rua residencia\ncom vigil\xe1ncia privada em bairro nobre de S\xe3o Paulo,\npr\xf3ximo \xe0 esta\xe7\xf5es de metr\xf4 e trem, Consulado americano,\nshopping centers, restaurantes e anchonetes\n";
+					me._sobre_o_lugar0__text.innerHTML=me._sobre_o_lugar0.ggText;
+					if (me._sobre_o_lugar0.ggUpdateText) {
+					me._sobre_o_lugar0.ggUpdateText=function() {
+						var hs="Quarto confort\xe1vel para  pessoa en rua residencia\ncom vigil\xe1ncia privada em bairro nobre de S\xe3o Paulo,\npr\xf3ximo \xe0 esta\xe7\xf5es de metr\xf4 e trem, Consulado americano,\nshopping centers, restaurantes e anchonetes\n";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._sobre_o_lugar0.ggUpdatePosition) me._sobre_o_lugar0.ggUpdatePosition();
+					}
+				}
+			}
+		}
+		me._sobre_o_lugar0.ggUpdatePosition=function (useTransition) {
+			if (useTransition==='undefined') {
+				useTransition = false;
+			}
+			if (!useTransition) {
+				this.style[domTransition]='none';
+			}
+			if (this.parentNode) {
+				var pw=this.parentNode.clientWidth;
+				var w=this.offsetWidth + 2;
+					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
+				var ph=this.parentNode.clientHeight;
+				var h=this.offsetHeight;
+					this.style.top=(this.ggDy + ph/2 - h/2) + 'px';
+			}
+		}
+		me._sobre_este_lugari.appendChild(me._sobre_o_lugar0);
+		el=me._espao_de_trabalho_exclusivo=document.createElement('div');
+		els=me._espao_de_trabalho_exclusivo__text=document.createElement('div');
+		el.className='ggskin ggskin_textdiv';
+		el.ggTextDiv=els;
+		el.ggId="Espa\xe7o de trabalho exclusivo";
+		el.ggDx=-9;
+		el.ggDy=12;
+		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
+		el.ggVisible=true;
+		el.className="ggskin ggskin_text tooltip";
+		el.ggType='text';
+		hs ='';
+		hs+='height : 72px;';
+		hs+='left : -10000px;';
+		hs+='position : absolute;';
+		hs+='top : -10000px;';
+		hs+='visibility : inherit;';
+		hs+='width : 333px;';
+		hs+='pointer-events:auto;';
+		el.setAttribute('style',hs);
+		el.style[domTransform + 'Origin']='50% 50%';
+		hs ='position:absolute;';
+		hs += 'box-sizing: border-box;';
+		hs+='cursor: default;';
+		hs+='left: 0px;';
+		hs+='top:  0px;';
+		hs+='width: 335px;';
+		hs+='height: auto;';
+		hs+='background: #ffffff;';
+		hs+='background: rgba(255,255,255,0);';
+		hs+='border: 1px solid #55aa7f;';
+		hs+='border: 1px solid rgba(85,170,127,0);';
+		hs+=cssPrefix + 'background-clip: padding-box;';
+		hs+='background-clip: padding-box;';
+		hs+='border-radius: 10px;';
+		hs+=cssPrefix + 'border-radius: 10px;';
+		hs+='color: rgba(255,255,255,1);';
+		hs+='text-align: justify;';
+		hs+='white-space: normal;';
+		hs+='padding: 2px 3px 2px 3px;';
+		hs+='overflow: hidden;';
+		hs+='overflow-y: auto;';
+		els.setAttribute('style',hs);
+		els.innerHTML="O espa\xe7o<br\/>Siuite com TV e ante-sala com frigobar, microondas, m\xe1quina de caf\xe9 dolce gusto e chaleira el\xe9trica";
+		el.appendChild(els);
+		me._espao_de_trabalho_exclusivo.ggIsActive=function() {
+			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
+				return this.parentNode.ggIsActive();
+			}
+			return false;
+		}
+		el.ggElementNodeId=function() {
+			if ((this.parentNode) && (this.parentNode.ggElementNodeId)) {
+				return this.parentNode.ggElementNodeId();
+			}
+			return player.getCurrentNode();
+		}
+		me._espao_de_trabalho_exclusivo.logicBlock_text = function() {
+			var newLogicStateText;
+			if (
+				((player.getVariableValue('POR') == true))
+			)
+			{
+				newLogicStateText = 0;
+			}
+			else if (
+				((player.getVariableValue('ENG') == true))
+			)
+			{
+				newLogicStateText = 1;
+			}
+			else if (
+				((player.getVariableValue('ESP') == true))
+			)
+			{
+				newLogicStateText = 2;
+			}
+			else {
+				newLogicStateText = -1;
+			}
+			if (me._espao_de_trabalho_exclusivo.ggCurrentLogicStateText != newLogicStateText) {
+				me._espao_de_trabalho_exclusivo.ggCurrentLogicStateText = newLogicStateText;
+				me._espao_de_trabalho_exclusivo.style[domTransition]='';
+				if (me._espao_de_trabalho_exclusivo.ggCurrentLogicStateText == 0) {
+					me._espao_de_trabalho_exclusivo.ggText="O espa\xe7o\nSiuite com TV e ante-sala com frigobar, microondas, m\xe1quina de caf\xe9 dolce gusto e chaleira el\xe9trica";
+					me._espao_de_trabalho_exclusivo__text.innerHTML=me._espao_de_trabalho_exclusivo.ggText;
+					if (me._espao_de_trabalho_exclusivo.ggUpdateText) {
+					me._espao_de_trabalho_exclusivo.ggUpdateText=function() {
+						var hs="O espa\xe7o\nSiuite com TV e ante-sala com frigobar, microondas, m\xe1quina de caf\xe9 dolce gusto e chaleira el\xe9trica";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._espao_de_trabalho_exclusivo.ggUpdatePosition) me._espao_de_trabalho_exclusivo.ggUpdatePosition();
+					}
+				}
+				else if (me._espao_de_trabalho_exclusivo.ggCurrentLogicStateText == 1) {
+					me._espao_de_trabalho_exclusivo.ggText="The space\nSuite with TV and roo, with minibar, microwave, dolce gusto coffee machine and electric kettle";
+					me._espao_de_trabalho_exclusivo__text.innerHTML=me._espao_de_trabalho_exclusivo.ggText;
+					if (me._espao_de_trabalho_exclusivo.ggUpdateText) {
+					me._espao_de_trabalho_exclusivo.ggUpdateText=function() {
+						var hs="The space\nSuite with TV and roo, with minibar, microwave, dolce gusto coffee machine and electric kettle";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._espao_de_trabalho_exclusivo.ggUpdatePosition) me._espao_de_trabalho_exclusivo.ggUpdatePosition();
+					}
+				}
+				else if (me._espao_de_trabalho_exclusivo.ggCurrentLogicStateText == 2) {
+					me._espao_de_trabalho_exclusivo.ggText="El espacio\nSiuite con TV e ante-sala com frigobar, microondas, m\xe1quina de caf\xe9 dolce gusto e tetera el\xe9trica";
+					me._espao_de_trabalho_exclusivo__text.innerHTML=me._espao_de_trabalho_exclusivo.ggText;
+					if (me._espao_de_trabalho_exclusivo.ggUpdateText) {
+					me._espao_de_trabalho_exclusivo.ggUpdateText=function() {
+						var hs="El espacio\nSiuite con TV e ante-sala com frigobar, microondas, m\xe1quina de caf\xe9 dolce gusto e tetera el\xe9trica";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._espao_de_trabalho_exclusivo.ggUpdatePosition) me._espao_de_trabalho_exclusivo.ggUpdatePosition();
+					}
+				}
+				else {
+					me._espao_de_trabalho_exclusivo.ggText="O espa\xe7o\nSiuite com TV e ante-sala com frigobar, microondas, m\xe1quina de caf\xe9 dolce gusto e chaleira el\xe9trica";
+					me._espao_de_trabalho_exclusivo__text.innerHTML=me._espao_de_trabalho_exclusivo.ggText;
+					if (me._espao_de_trabalho_exclusivo.ggUpdateText) {
+					me._espao_de_trabalho_exclusivo.ggUpdateText=function() {
+						var hs="O espa\xe7o\nSiuite com TV e ante-sala com frigobar, microondas, m\xe1quina de caf\xe9 dolce gusto e chaleira el\xe9trica";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._espao_de_trabalho_exclusivo.ggUpdatePosition) me._espao_de_trabalho_exclusivo.ggUpdatePosition();
+					}
+				}
+			}
+		}
+		me._espao_de_trabalho_exclusivo.ggUpdatePosition=function (useTransition) {
+			if (useTransition==='undefined') {
+				useTransition = false;
+			}
+			if (!useTransition) {
+				this.style[domTransition]='none';
+			}
+			if (this.parentNode) {
+				var pw=this.parentNode.clientWidth;
+				var w=this.offsetWidth + 2;
+					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
+				var ph=this.parentNode.clientHeight;
+				var h=this.offsetHeight;
+					this.style.top=(this.ggDy + ph/2 - h/2) + 'px';
+			}
+		}
+		me._sobre_este_lugari.appendChild(me._espao_de_trabalho_exclusivo);
+		el=me._durante_sua_estadia=document.createElement('div');
+		els=me._durante_sua_estadia__text=document.createElement('div');
+		el.className='ggskin ggskin_textdiv';
+		el.ggTextDiv=els;
+		el.ggId="Durante sua estadia";
+		el.ggDx=-12;
+		el.ggDy=80;
+		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
+		el.ggVisible=true;
+		el.className="ggskin ggskin_text tooltip";
+		el.ggType='text';
+		hs ='';
+		hs+='height : 72px;';
+		hs+='left : -10000px;';
+		hs+='position : absolute;';
+		hs+='top : -10000px;';
+		hs+='visibility : inherit;';
+		hs+='width : 333px;';
+		hs+='pointer-events:auto;';
+		el.setAttribute('style',hs);
+		el.style[domTransform + 'Origin']='50% 50%';
+		hs ='position:absolute;';
+		hs += 'box-sizing: border-box;';
+		hs+='cursor: default;';
+		hs+='left: 0px;';
+		hs+='top:  0px;';
+		hs+='width: 335px;';
+		hs+='height: auto;';
+		hs+='background: #ffffff;';
+		hs+='background: rgba(255,255,255,0);';
+		hs+='border: 1px solid #55aa7f;';
+		hs+='border: 1px solid rgba(85,170,127,0);';
+		hs+=cssPrefix + 'background-clip: padding-box;';
+		hs+='background-clip: padding-box;';
+		hs+='border-radius: 10px;';
+		hs+=cssPrefix + 'border-radius: 10px;';
+		hs+='color: rgba(255,255,255,1);';
+		hs+='text-align: justify;';
+		hs+='white-space: normal;';
+		hs+='padding: 2px 3px 2px 3px;';
+		hs+='overflow: hidden;';
+		hs+='overflow-y: auto;';
+		els.setAttribute('style',hs);
+		els.innerHTML="Durante sua estadia<br\/>Eu moro na resid\xeancia e estarei dispon\xedvel para <br\/>tirar d\xfavidas pessoalmente ou por mensagem";
+		el.appendChild(els);
+		me._durante_sua_estadia.ggIsActive=function() {
+			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
+				return this.parentNode.ggIsActive();
+			}
+			return false;
+		}
+		el.ggElementNodeId=function() {
+			if ((this.parentNode) && (this.parentNode.ggElementNodeId)) {
+				return this.parentNode.ggElementNodeId();
+			}
+			return player.getCurrentNode();
+		}
+		me._durante_sua_estadia.logicBlock_text = function() {
+			var newLogicStateText;
+			if (
+				((player.getVariableValue('POR') == true))
+			)
+			{
+				newLogicStateText = 0;
+			}
+			else if (
+				((player.getVariableValue('ENG') == true))
+			)
+			{
+				newLogicStateText = 1;
+			}
+			else if (
+				((player.getVariableValue('ESP') == true))
+			)
+			{
+				newLogicStateText = 2;
+			}
+			else {
+				newLogicStateText = -1;
+			}
+			if (me._durante_sua_estadia.ggCurrentLogicStateText != newLogicStateText) {
+				me._durante_sua_estadia.ggCurrentLogicStateText = newLogicStateText;
+				me._durante_sua_estadia.style[domTransition]='';
+				if (me._durante_sua_estadia.ggCurrentLogicStateText == 0) {
+					me._durante_sua_estadia.ggText="Durante sua estadia\nEu moro na resid\xeancia e estarei dispon\xedvel para \ntirar d\xfavidas pessoalmente ou por mensagem";
+					me._durante_sua_estadia__text.innerHTML=me._durante_sua_estadia.ggText;
+					if (me._durante_sua_estadia.ggUpdateText) {
+					me._durante_sua_estadia.ggUpdateText=function() {
+						var hs="Durante sua estadia\nEu moro na resid\xeancia e estarei dispon\xedvel para \ntirar d\xfavidas pessoalmente ou por mensagem";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._durante_sua_estadia.ggUpdatePosition) me._durante_sua_estadia.ggUpdatePosition();
+					}
+				}
+				else if (me._durante_sua_estadia.ggCurrentLogicStateText == 1) {
+					me._durante_sua_estadia.ggText="During your stay I live in the residence \nand will be availablefor ask questions \nin person or by message";
+					me._durante_sua_estadia__text.innerHTML=me._durante_sua_estadia.ggText;
+					if (me._durante_sua_estadia.ggUpdateText) {
+					me._durante_sua_estadia.ggUpdateText=function() {
+						var hs="During your stay I live in the residence \nand will be availablefor ask questions \nin person or by message";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._durante_sua_estadia.ggUpdatePosition) me._durante_sua_estadia.ggUpdatePosition();
+					}
+				}
+				else if (me._durante_sua_estadia.ggCurrentLogicStateText == 2) {
+					me._durante_sua_estadia.ggText="Durante tu estadia,vivo en la residencia\ny estar\xe9 disponible para hacer preguntas\nen persona o por mensaje";
+					me._durante_sua_estadia__text.innerHTML=me._durante_sua_estadia.ggText;
+					if (me._durante_sua_estadia.ggUpdateText) {
+					me._durante_sua_estadia.ggUpdateText=function() {
+						var hs="Durante tu estadia,vivo en la residencia\ny estar\xe9 disponible para hacer preguntas\nen persona o por mensaje";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._durante_sua_estadia.ggUpdatePosition) me._durante_sua_estadia.ggUpdatePosition();
+					}
+				}
+				else {
+					me._durante_sua_estadia.ggText="Durante sua estadia\nEu moro na resid\xeancia e estarei dispon\xedvel para \ntirar d\xfavidas pessoalmente ou por mensagem";
+					me._durante_sua_estadia__text.innerHTML=me._durante_sua_estadia.ggText;
+					if (me._durante_sua_estadia.ggUpdateText) {
+					me._durante_sua_estadia.ggUpdateText=function() {
+						var hs="Durante sua estadia\nEu moro na resid\xeancia e estarei dispon\xedvel para \ntirar d\xfavidas pessoalmente ou por mensagem";
+						if (hs!=this.ggText) {
+							this.ggText=hs;
+							this.ggTextDiv.innerHTML=hs;
+							if (this.ggUpdatePosition) this.ggUpdatePosition();
+						}
+					}
+					} else {
+						if (me._durante_sua_estadia.ggUpdatePosition) me._durante_sua_estadia.ggUpdatePosition();
+					}
+				}
+			}
+		}
+		me._durante_sua_estadia.ggUpdatePosition=function (useTransition) {
+			if (useTransition==='undefined') {
+				useTransition = false;
+			}
+			if (!useTransition) {
+				this.style[domTransition]='none';
+			}
+			if (this.parentNode) {
+				var pw=this.parentNode.clientWidth;
+				var w=this.offsetWidth + 2;
+					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
+				var ph=this.parentNode.clientHeight;
+				var h=this.offsetHeight;
+					this.style.top=(this.ggDy + ph/2 - h/2) + 'px';
+			}
+		}
+		me._sobre_este_lugari.appendChild(me._durante_sua_estadia);
+		me._sobre_o_lugar.appendChild(me._sobre_este_lugari);
+		me.divSkin.appendChild(me._sobre_o_lugar);
 		el=me._menu=document.createElement('div');
 		el.ggId="MENU";
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
@@ -17892,7 +17892,7 @@ function pano2vrSkin(player,base) {
 		hs+='height : 35px;';
 		hs+='left : -1px;';
 		hs+='position : absolute;';
-		hs+='top : -1px;';
+		hs+='top : -3px;';
 		hs+='visibility : inherit;';
 		hs+='width : 100%;';
 		hs+='pointer-events:auto;';
@@ -17943,9 +17943,9 @@ function pano2vrSkin(player,base) {
 		el.ggType='text';
 		hs ='';
 		hs+='height : 24px;';
-		hs+='left : 123px;';
+		hs+='left : 125px;';
 		hs+='position : absolute;';
-		hs+='top : 2px;';
+		hs+='top : 4px;';
 		hs+='visibility : inherit;';
 		hs+='width : 110px;';
 		hs+='pointer-events:auto;';
@@ -18002,8 +18002,8 @@ function pano2vrSkin(player,base) {
 					me._banheiro_menu0.style.top='27px';
 				}
 				else {
-					me._banheiro_menu0.style.left='123px';
-					me._banheiro_menu0.style.top='2px';
+					me._banheiro_menu0.style.left='125px';
+					me._banheiro_menu0.style.top='4px';
 				}
 			}
 		}
@@ -18170,7 +18170,7 @@ function pano2vrSkin(player,base) {
 			}
 		}
 		me._banheiro_menu0.onclick=function (e) {
-			player.openNext("{node9}",player.hotspot.target);
+			player.openNext("{node2}",player.hotspot.target);
 		}
 		me._banheiro_menu0.onmouseover=function (e) {
 			me.elementMouseOver['banheiro_menu0']=true;
@@ -18208,7 +18208,7 @@ function pano2vrSkin(player,base) {
 		el.ggType='text';
 		hs ='';
 		hs+='height : 24px;';
-		hs+='left : 243px;';
+		hs+='left : 246px;';
 		hs+='position : absolute;';
 		hs+='top : 4px;';
 		hs+='visibility : inherit;';
@@ -18234,7 +18234,7 @@ function pano2vrSkin(player,base) {
 		hs+='overflow: hidden;';
 		hs+='overflow-y: auto;';
 		els.setAttribute('style',hs);
-		els.innerHTML="COZINHA";
+		els.innerHTML="ESCADA";
 		el.appendChild(els);
 		me._cozinha_menu.ggIsActive=function() {
 			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
@@ -18267,7 +18267,7 @@ function pano2vrSkin(player,base) {
 					me._cozinha_menu.style.top='2px';
 				}
 				else {
-					me._cozinha_menu.style.left='243px';
+					me._cozinha_menu.style.left='246px';
 					me._cozinha_menu.style.top='4px';
 				}
 			}
@@ -18347,11 +18347,11 @@ function pano2vrSkin(player,base) {
 				me._cozinha_menu.ggCurrentLogicStateText = newLogicStateText;
 				me._cozinha_menu.style[domTransition]='left 0s, top 0s, ' + cssPrefix + 'transform 0s, background-color 0s, color 0s';
 				if (me._cozinha_menu.ggCurrentLogicStateText == 0) {
-					me._cozinha_menu.ggText="COZINHA";
+					me._cozinha_menu.ggText="ESCADA";
 					me._cozinha_menu__text.innerHTML=me._cozinha_menu.ggText;
 					if (me._cozinha_menu.ggUpdateText) {
 					me._cozinha_menu.ggUpdateText=function() {
-						var hs="COZINHA";
+						var hs="ESCADA";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -18363,11 +18363,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._cozinha_menu.ggCurrentLogicStateText == 1) {
-					me._cozinha_menu.ggText="KITCHEN";
+					me._cozinha_menu.ggText="STAIR";
 					me._cozinha_menu__text.innerHTML=me._cozinha_menu.ggText;
 					if (me._cozinha_menu.ggUpdateText) {
 					me._cozinha_menu.ggUpdateText=function() {
-						var hs="KITCHEN";
+						var hs="STAIR";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -18379,11 +18379,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._cozinha_menu.ggCurrentLogicStateText == 2) {
-					me._cozinha_menu.ggText="COCINA";
+					me._cozinha_menu.ggText="ESCALERA";
 					me._cozinha_menu__text.innerHTML=me._cozinha_menu.ggText;
 					if (me._cozinha_menu.ggUpdateText) {
 					me._cozinha_menu.ggUpdateText=function() {
-						var hs="COCINA";
+						var hs="ESCALERA";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -18395,11 +18395,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else {
-					me._cozinha_menu.ggText="COZINHA";
+					me._cozinha_menu.ggText="ESCADA";
 					me._cozinha_menu__text.innerHTML=me._cozinha_menu.ggText;
 					if (me._cozinha_menu.ggUpdateText) {
 					me._cozinha_menu.ggUpdateText=function() {
-						var hs="COZINHA";
+						var hs="ESCADA";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -18435,7 +18435,7 @@ function pano2vrSkin(player,base) {
 			}
 		}
 		me._cozinha_menu.onclick=function (e) {
-			player.openNext("{node10}",player.hotspot.target);
+			player.openNext("{node6}",player.hotspot.target);
 		}
 		me._cozinha_menu.onmouseover=function (e) {
 			me.elementMouseOver['cozinha_menu']=true;
@@ -18475,7 +18475,7 @@ function pano2vrSkin(player,base) {
 		hs+='height : 24px;';
 		hs+='left : 363px;';
 		hs+='position : absolute;';
-		hs+='top : 3px;';
+		hs+='top : 4px;';
 		hs+='visibility : inherit;';
 		hs+='width : 110px;';
 		hs+='pointer-events:auto;';
@@ -18533,7 +18533,7 @@ function pano2vrSkin(player,base) {
 				}
 				else {
 					me._frigobar_menu.style.left='363px';
-					me._frigobar_menu.style.top='3px';
+					me._frigobar_menu.style.top='4px';
 				}
 			}
 		}
@@ -18700,7 +18700,7 @@ function pano2vrSkin(player,base) {
 			}
 		}
 		me._frigobar_menu.onclick=function (e) {
-			player.openNext("{node14}",player.hotspot.target);
+			player.openNext("{node10}",player.hotspot.target);
 		}
 		me._frigobar_menu.onmouseover=function (e) {
 			me.elementMouseOver['frigobar_menu']=true;
@@ -18740,7 +18740,7 @@ function pano2vrSkin(player,base) {
 		hs+='height : 25px;';
 		hs+='left : 482px;';
 		hs+='position : absolute;';
-		hs+='top : 3px;';
+		hs+='top : 4px;';
 		hs+='visibility : inherit;';
 		hs+='width : 110px;';
 		hs+='pointer-events:auto;';
@@ -18798,7 +18798,7 @@ function pano2vrSkin(player,base) {
 				}
 				else {
 					me._quarto_menu.style.left='482px';
-					me._quarto_menu.style.top='3px';
+					me._quarto_menu.style.top='4px';
 				}
 			}
 		}
@@ -18992,7 +18992,7 @@ function pano2vrSkin(player,base) {
 			}
 		}
 		me._quarto_menu.onclick=function (e) {
-			player.openNext("{node13}",player.hotspot.target);
+			player.openNext("{node9}",player.hotspot.target);
 		}
 		me._quarto_menu.onmouseover=function (e) {
 			me.elementMouseOver['quarto_menu']=true;
@@ -19295,7 +19295,7 @@ function pano2vrSkin(player,base) {
 		el.ggType='text';
 		hs ='';
 		hs+='height : 24px;';
-		hs+='left : 7px;';
+		hs+='left : 8px;';
 		hs+='position : absolute;';
 		hs+='top : 4px;';
 		hs+='visibility : inherit;';
@@ -19354,7 +19354,7 @@ function pano2vrSkin(player,base) {
 					me._info_menu.style.top='2px';
 				}
 				else {
-					me._info_menu.style.left='7px';
+					me._info_menu.style.left='8px';
 					me._info_menu.style.top='4px';
 				}
 			}
@@ -19831,18 +19831,10 @@ function pano2vrSkin(player,base) {
 		me._unmute.onmouseover=function (e) {
 			me._unmute__img.style.visibility='hidden';
 			me._unmute__imgo.style.visibility='inherit';
-			me.elementMouseOver['unmute']=true;
-			me._tt_unmute.logicBlock_visible();
 		}
 		me._unmute.onmouseout=function (e) {
 			me._unmute__img.style.visibility='inherit';
 			me._unmute__imgo.style.visibility='hidden';
-			me.elementMouseOver['unmute']=false;
-			me._tt_unmute.logicBlock_visible();
-		}
-		me._unmute.ontouchend=function (e) {
-			me.elementMouseOver['unmute']=false;
-			me._tt_unmute.logicBlock_visible();
 		}
 		me._unmute.ggUpdatePosition=function (useTransition) {
 			if (useTransition==='undefined') {
@@ -19857,188 +19849,6 @@ function pano2vrSkin(player,base) {
 					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
 			}
 		}
-		el=me._tt_unmute=document.createElement('div');
-		els=me._tt_unmute__text=document.createElement('div');
-		el.className='ggskin ggskin_textdiv';
-		el.ggTextDiv=els;
-		el.ggId="tt_unmute";
-		el.ggDx=0;
-		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
-		el.ggVisible=false;
-		el.className="ggskin ggskin_text ";
-		el.ggType='text';
-		hs ='';
-		hs+='z-index: 100;';
-		hs+='height : 20px;';
-		hs+='left : -10000px;';
-		hs+='position : absolute;';
-		hs+='top : 32px;';
-		hs+='visibility : hidden;';
-		hs+='width : 100px;';
-		hs+='pointer-events:auto;';
-		hs+='text-shadow: 1px 1px 4px #000000;';
-		el.setAttribute('style',hs);
-		el.style[domTransform + 'Origin']='50% 50%';
-		hs ='position:absolute;';
-		hs += 'box-sizing: border-box;';
-		hs+='cursor: default;';
-		hs+='left: 0px;';
-		hs+='top:  0px;';
-		hs+='width: auto;';
-		hs+='height: auto;';
-		hs+='border: 0px solid #000000;';
-		hs+='color: rgba(255,255,255,1);';
-		hs+='text-align: center;';
-		hs+='white-space: nowrap;';
-		hs+='padding: 0px 1px 0px 1px;';
-		hs+='overflow: hidden;';
-		els.setAttribute('style',hs);
-		els.innerHTML="Som";
-		el.appendChild(els);
-		me._tt_unmute.ggIsActive=function() {
-			if ((this.parentNode) && (this.parentNode.ggIsActive)) {
-				return this.parentNode.ggIsActive();
-			}
-			return false;
-		}
-		el.ggElementNodeId=function() {
-			if ((this.parentNode) && (this.parentNode.ggElementNodeId)) {
-				return this.parentNode.ggElementNodeId();
-			}
-			return player.getCurrentNode();
-		}
-		me._tt_unmute.logicBlock_visible = function() {
-			var newLogicStateVisible;
-			if (
-				((me.elementMouseOver['unmute'] == true))
-			)
-			{
-				newLogicStateVisible = 0;
-			}
-			else {
-				newLogicStateVisible = -1;
-			}
-			if (me._tt_unmute.ggCurrentLogicStateVisible != newLogicStateVisible) {
-				me._tt_unmute.ggCurrentLogicStateVisible = newLogicStateVisible;
-				me._tt_unmute.style[domTransition]='';
-				if (me._tt_unmute.ggCurrentLogicStateVisible == 0) {
-					me._tt_unmute.style.visibility=(Number(me._tt_unmute.style.opacity)>0||!me._tt_unmute.style.opacity)?'inherit':'hidden';
-					me._tt_unmute.ggVisible=true;
-				}
-				else {
-					me._tt_unmute.style.visibility="hidden";
-					me._tt_unmute.ggVisible=false;
-				}
-			}
-		}
-		me._tt_unmute.logicBlock_text = function() {
-			var newLogicStateText;
-			if (
-				((player.getVariableValue('POR') == true))
-			)
-			{
-				newLogicStateText = 0;
-			}
-			else if (
-				((player.getVariableValue('ENG') == true))
-			)
-			{
-				newLogicStateText = 1;
-			}
-			else if (
-				((player.getVariableValue('ESP') == true))
-			)
-			{
-				newLogicStateText = 2;
-			}
-			else {
-				newLogicStateText = -1;
-			}
-			if (me._tt_unmute.ggCurrentLogicStateText != newLogicStateText) {
-				me._tt_unmute.ggCurrentLogicStateText = newLogicStateText;
-				me._tt_unmute.style[domTransition]='';
-				if (me._tt_unmute.ggCurrentLogicStateText == 0) {
-					me._tt_unmute.ggText="Som";
-					me._tt_unmute__text.innerHTML=me._tt_unmute.ggText;
-					if (me._tt_unmute.ggUpdateText) {
-					me._tt_unmute.ggUpdateText=function() {
-						var hs="Som";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._tt_unmute.ggUpdatePosition) me._tt_unmute.ggUpdatePosition();
-					}
-				}
-				else if (me._tt_unmute.ggCurrentLogicStateText == 1) {
-					me._tt_unmute.ggText="Sound";
-					me._tt_unmute__text.innerHTML=me._tt_unmute.ggText;
-					if (me._tt_unmute.ggUpdateText) {
-					me._tt_unmute.ggUpdateText=function() {
-						var hs="Sound";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._tt_unmute.ggUpdatePosition) me._tt_unmute.ggUpdatePosition();
-					}
-				}
-				else if (me._tt_unmute.ggCurrentLogicStateText == 2) {
-					me._tt_unmute.ggText="Sonido";
-					me._tt_unmute__text.innerHTML=me._tt_unmute.ggText;
-					if (me._tt_unmute.ggUpdateText) {
-					me._tt_unmute.ggUpdateText=function() {
-						var hs="Sonido";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._tt_unmute.ggUpdatePosition) me._tt_unmute.ggUpdatePosition();
-					}
-				}
-				else {
-					me._tt_unmute.ggText="Som";
-					me._tt_unmute__text.innerHTML=me._tt_unmute.ggText;
-					if (me._tt_unmute.ggUpdateText) {
-					me._tt_unmute.ggUpdateText=function() {
-						var hs="Som";
-						if (hs!=this.ggText) {
-							this.ggText=hs;
-							this.ggTextDiv.innerHTML=hs;
-							if (this.ggUpdatePosition) this.ggUpdatePosition();
-						}
-					}
-					} else {
-						if (me._tt_unmute.ggUpdatePosition) me._tt_unmute.ggUpdatePosition();
-					}
-				}
-			}
-		}
-		me._tt_unmute.ggUpdatePosition=function (useTransition) {
-			if (useTransition==='undefined') {
-				useTransition = false;
-			}
-			if (!useTransition) {
-				this.style[domTransition]='none';
-			}
-			if (this.parentNode) {
-				var pw=this.parentNode.clientWidth;
-				var w=this.offsetWidth + 0;
-					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
-			}
-			this.style[domTransition]='left 0';
-			this.ggTextDiv.style.left=((98-this.ggTextDiv.offsetWidth)/2) + 'px';
-		}
-		me._unmute.appendChild(me._tt_unmute);
 		me._button_mute.appendChild(me._unmute);
 		el=me._mute=document.createElement('div');
 		els=me._mute__img=document.createElement('img');
@@ -22767,7 +22577,7 @@ function pano2vrSkin(player,base) {
 			}
 			else if (
 				((player.getVariableValue('POR') == true)) && 
-				((me.ggUserdata.title == "QuartoFundo"))
+				((me.ggUserdata.title == "Quarto"))
 			)
 			{
 				newLogicStateText = 1;
@@ -22788,7 +22598,7 @@ function pano2vrSkin(player,base) {
 			}
 			else if (
 				((player.getVariableValue('POR') == true)) && 
-				((me.ggUserdata.title == "AcessoSala"))
+				((me.ggUserdata.title == "Acesso Quarto"))
 			)
 			{
 				newLogicStateText = 4;
@@ -22802,21 +22612,21 @@ function pano2vrSkin(player,base) {
 			}
 			else if (
 				((player.getVariableValue('POR') == true)) && 
-				((me.ggUserdata.title == "Cozinha"))
+				((me.ggUserdata.title == "Escada Superior"))
 			)
 			{
 				newLogicStateText = 6;
 			}
 			else if (
 				((player.getVariableValue('POR') == true)) && 
-				((me.ggUserdata.title == "Acesso Cozinha"))
+				((me.ggUserdata.title == "Escada T\xe9rreo"))
 			)
 			{
 				newLogicStateText = 7;
 			}
 			else if (
 				((player.getVariableValue('ENG') == true)) && 
-				((me.ggUserdata.title == "QuartoFundo"))
+				((me.ggUserdata.title == "Quarto"))
 			)
 			{
 				newLogicStateText = 8;
@@ -22837,7 +22647,7 @@ function pano2vrSkin(player,base) {
 			}
 			else if (
 				((player.getVariableValue('ENG') == true)) && 
-				((me.ggUserdata.title == "AcessoSala"))
+				((me.ggUserdata.title == "Sala"))
 			)
 			{
 				newLogicStateText = 11;
@@ -22851,14 +22661,14 @@ function pano2vrSkin(player,base) {
 			}
 			else if (
 				((player.getVariableValue('ENG') == true)) && 
-				((me.ggUserdata.title == "Cozinha"))
+				((me.ggUserdata.title == "Escada T\xe9rreo"))
 			)
 			{
 				newLogicStateText = 13;
 			}
 			else if (
 				((player.getVariableValue('ENG') == true)) && 
-				((me.ggUserdata.title == "Acesso Cozinha"))
+				((me.ggUserdata.title == "Escada Superior"))
 			)
 			{
 				newLogicStateText = 14;
@@ -22871,15 +22681,15 @@ function pano2vrSkin(player,base) {
 				newLogicStateText = 15;
 			}
 			else if (
-				((player.getVariableValue('ESP') == true)) && 
-				((me.ggUserdata.title == "QuartoFundo"))
+				((player.getVariableValue('ENG') == true)) && 
+				((me.ggUserdata.title == "Acesso Quarto"))
 			)
 			{
 				newLogicStateText = 16;
 			}
 			else if (
-				((player.getVariableValue('ENG') == true)) && 
-				((me.ggUserdata.title == "Acesso"))
+				((player.getVariableValue('ESP') == true)) && 
+				((me.ggUserdata.title == "Quarto"))
 			)
 			{
 				newLogicStateText = 17;
@@ -22893,7 +22703,7 @@ function pano2vrSkin(player,base) {
 			}
 			else if (
 				((player.getVariableValue('ESP') == true)) && 
-				((me.ggUserdata.title == "AcessoSala"))
+				((me.ggUserdata.title == "Escada Superior"))
 			)
 			{
 				newLogicStateText = 19;
@@ -22907,14 +22717,14 @@ function pano2vrSkin(player,base) {
 			}
 			else if (
 				((player.getVariableValue('ESP') == true)) && 
-				((me.ggUserdata.title == "Cozinha"))
+				((me.ggUserdata.title == "Escada T\xe9rreo"))
 			)
 			{
 				newLogicStateText = 21;
 			}
 			else if (
 				((player.getVariableValue('ESP') == true)) && 
-				((me.ggUserdata.title == "Acesso Cozinha"))
+				((me.ggUserdata.title == "Acesso Quarto"))
 			)
 			{
 				newLogicStateText = 22;
@@ -22949,11 +22759,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 1) {
-					me._hs_tt.ggText="QuartoFundo";
+					me._hs_tt.ggText="Quarto";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="QuartoFundo";
+						var hs="Quarto";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -22997,11 +22807,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 4) {
-					me._hs_tt.ggText="AcessoSala";
+					me._hs_tt.ggText="Acesso Quarto";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="AcessoSala";
+						var hs="Acesso Quarto";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -23029,11 +22839,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 6) {
-					me._hs_tt.ggText="Cozinha";
+					me._hs_tt.ggText="Escada Superior";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="Cozinha";
+						var hs="Escada Superior";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -23045,11 +22855,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 7) {
-					me._hs_tt.ggText="Acesso Cozinha";
+					me._hs_tt.ggText="Escada T\xe9rreo";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="Acesso Cozinha";
+						var hs="Escada T\xe9rreo";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -23109,11 +22919,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 11) {
-					me._hs_tt.ggText="Access Living";
+					me._hs_tt.ggText=" Living";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="Access Living";
+						var hs=" Living";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -23141,11 +22951,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 13) {
-					me._hs_tt.ggText="Kitchen";
+					me._hs_tt.ggText="Stair GF";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="Kitchen";
+						var hs="Stair GF";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -23157,11 +22967,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 14) {
-					me._hs_tt.ggText="Access Kitchen";
+					me._hs_tt.ggText="Stair 1F";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="Access Kitchen";
+						var hs="Stair 1F";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -23189,11 +22999,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 16) {
-					me._hs_tt.ggText="Cuarto Fondo";
+					me._hs_tt.ggText="Acess Bedroom";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="Cuarto Fondo";
+						var hs="Acess Bedroom";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -23205,11 +23015,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 17) {
-					me._hs_tt.ggText="Acceso";
+					me._hs_tt.ggText="Cuarto ";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="Acceso";
+						var hs="Cuarto ";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -23237,11 +23047,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 19) {
-					me._hs_tt.ggText="Acceso Sala";
+					me._hs_tt.ggText="Escalera Primer Piso";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="Acceso Sala";
+						var hs="Escalera Primer Piso";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -23269,11 +23079,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 21) {
-					me._hs_tt.ggText="Cocina";
+					me._hs_tt.ggText="Escalera Planta Baja";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="Cocina";
+						var hs="Escalera Planta Baja";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -23285,11 +23095,11 @@ function pano2vrSkin(player,base) {
 					}
 				}
 				else if (me._hs_tt.ggCurrentLogicStateText == 22) {
-					me._hs_tt.ggText="Acceso Cocina";
+					me._hs_tt.ggText="Acceso Cuarto";
 					me._hs_tt__text.innerHTML=me._hs_tt.ggText;
 					if (me._hs_tt.ggUpdateText) {
 					me._hs_tt.ggUpdateText=function() {
-						var hs="Acceso Cocina";
+						var hs="Acceso Cuarto";
 						if (hs!=this.ggText) {
 							this.ggText=hs;
 							this.ggTextDiv.innerHTML=hs;
@@ -24253,10 +24063,10 @@ this.__div.style.top = vs.height / 2 + "px";
 	me._banheiroi.logicBlock_scaling();
 	me._serviosi.logicBlock_position();
 	me._serviosi.logicBlock_scaling();
-	me._sobre_o_lugar.logicBlock_position();
-	me._sobre_o_lugar.logicBlock_scaling();
 	me._info.logicBlock_position();
 	me._info.logicBlock_scaling();
+	me._sobre_o_lugar.logicBlock_position();
+	me._sobre_o_lugar.logicBlock_scaling();
 	me._menu.logicBlock_size();
 	me._banheiro_menu0.logicBlock_position();
 	me._banheiro_menu0.logicBlock_scaling();
@@ -24321,10 +24131,6 @@ this.__div.style.top = vs.height / 2 + "px";
 	me._serviosi.logicBlock_visible();
 	me._wifi.logicBlock_text();
 	me._espao_de_trabalho_exclusivo0.logicBlock_text();
-	me._sobre_o_lugar.logicBlock_visible();
-	me._sobre_o_lugar0.logicBlock_text();
-	me._espao_de_trabalho_exclusivo.logicBlock_text();
-	me._durante_sua_estadia.logicBlock_text();
 	me._banheiro_.logicBlock_text();
 	me._quarto_e_lavanderiab.logicBlock_text();
 	me._entretenimentob.logicBlock_text();
@@ -24335,6 +24141,10 @@ this.__div.style.top = vs.height / 2 + "px";
 	me._estacionamento_e_instalaesb.logicBlock_text();
 	me._serviosb.logicBlock_text();
 	me._no_inclusob.logicBlock_text();
+	me._sobre_o_lugar.logicBlock_visible();
+	me._sobre_o_lugar0.logicBlock_text();
+	me._espao_de_trabalho_exclusivo.logicBlock_text();
+	me._durante_sua_estadia.logicBlock_text();
 	me._banheiro_menu0.logicBlock_text();
 	me._cozinha_menu.logicBlock_text();
 	me._frigobar_menu.logicBlock_text();
@@ -24342,20 +24152,19 @@ this.__div.style.top = vs.height / 2 + "px";
 	me._quarto_menu.logicBlock_textcolor();
 	me._garagem_menu.logicBlock_text();
 	me._info_menu.logicBlock_text();
-	me._tt_unmute.logicBlock_text();
 	me._iniciar0.logicBlock_text();
 	me._indicativo2.logicBlock_text();
 	me._banheiro_menu.logicBlock_text();
 	me._enter_vr.logicBlock_visible();
-	player.addListener('sizechanged', function(args) { me._quarto_e_lavanderiai.logicBlock_position();me._quarto_e_lavanderiai.logicBlock_scaling();me._cozinha_e_sala_de_jantari.logicBlock_position();me._cozinha_e_sala_de_jantari.logicBlock_scaling();me._no_inclusoi.logicBlock_position();me._no_inclusoi.logicBlock_scaling();me._entretenimentoi.logicBlock_position();me._entretenimentoi.logicBlock_scaling();me._internet_e_escritrioi.logicBlock_position();me._internet_e_escritrioi.logicBlock_scaling();me._privacidade_e_seguranai.logicBlock_position();me._privacidade_e_seguranai.logicBlock_scaling();me._estacionamento_e_instalaesi.logicBlock_position();me._estacionamento_e_instalaesi.logicBlock_scaling();me._climatizaoi.logicBlock_position();me._climatizaoi.logicBlock_scaling();me._banheiroi.logicBlock_position();me._banheiroi.logicBlock_scaling();me._serviosi.logicBlock_position();me._serviosi.logicBlock_scaling();me._sobre_o_lugar.logicBlock_position();me._sobre_o_lugar.logicBlock_scaling();me._info.logicBlock_position();me._info.logicBlock_scaling();me._menu.logicBlock_size();me._banheiro_menu0.logicBlock_position();me._banheiro_menu0.logicBlock_scaling();me._cozinha_menu.logicBlock_position();me._cozinha_menu.logicBlock_scaling();me._frigobar_menu.logicBlock_position();me._frigobar_menu.logicBlock_scaling();me._quarto_menu.logicBlock_position();me._quarto_menu.logicBlock_scaling();me._garagem_menu.logicBlock_position();me._garagem_menu.logicBlock_scaling();me._info_menu.logicBlock_position();me._info_menu.logicBlock_scaling();me._button_mute.logicBlock_position();me._button_fullscreen.logicBlock_position();me._indicaes_de_uso.logicBlock_position();me._indicaes_de_uso.logicBlock_scaling();me._agenda.logicBlock_position();me._banheiro_menu.logicBlock_scaling(); });
+	player.addListener('sizechanged', function(args) { me._quarto_e_lavanderiai.logicBlock_position();me._quarto_e_lavanderiai.logicBlock_scaling();me._cozinha_e_sala_de_jantari.logicBlock_position();me._cozinha_e_sala_de_jantari.logicBlock_scaling();me._no_inclusoi.logicBlock_position();me._no_inclusoi.logicBlock_scaling();me._entretenimentoi.logicBlock_position();me._entretenimentoi.logicBlock_scaling();me._internet_e_escritrioi.logicBlock_position();me._internet_e_escritrioi.logicBlock_scaling();me._privacidade_e_seguranai.logicBlock_position();me._privacidade_e_seguranai.logicBlock_scaling();me._estacionamento_e_instalaesi.logicBlock_position();me._estacionamento_e_instalaesi.logicBlock_scaling();me._climatizaoi.logicBlock_position();me._climatizaoi.logicBlock_scaling();me._banheiroi.logicBlock_position();me._banheiroi.logicBlock_scaling();me._serviosi.logicBlock_position();me._serviosi.logicBlock_scaling();me._info.logicBlock_position();me._info.logicBlock_scaling();me._sobre_o_lugar.logicBlock_position();me._sobre_o_lugar.logicBlock_scaling();me._menu.logicBlock_size();me._banheiro_menu0.logicBlock_position();me._banheiro_menu0.logicBlock_scaling();me._cozinha_menu.logicBlock_position();me._cozinha_menu.logicBlock_scaling();me._frigobar_menu.logicBlock_position();me._frigobar_menu.logicBlock_scaling();me._quarto_menu.logicBlock_position();me._quarto_menu.logicBlock_scaling();me._garagem_menu.logicBlock_position();me._garagem_menu.logicBlock_scaling();me._info_menu.logicBlock_position();me._info_menu.logicBlock_scaling();me._button_mute.logicBlock_position();me._button_fullscreen.logicBlock_position();me._indicaes_de_uso.logicBlock_position();me._indicaes_de_uso.logicBlock_scaling();me._agenda.logicBlock_position();me._banheiro_menu.logicBlock_scaling(); });
 	player.addListener('fullscreenenter', function(args) { me._button_image_normalscreen.logicBlock_visible();me._button_image_fullscreen.logicBlock_visible(); });
 	player.addListener('fullscreenexit', function(args) { me._button_image_normalscreen.logicBlock_visible();me._button_image_fullscreen.logicBlock_visible(); });
-	player.addListener('changenode', function(args) { me._quarto_e_lavanderiai.logicBlock_visible();me._bsico0.logicBlock_text();me._cabides.logicBlock_text();me._roupa_de_cama.logicBlock_text();me._cobertores_e_travesseiros_extras.logicBlock_text();me._varal_para_secar_roupas.logicBlock_text();me._local_para_guardar_as_roupas_closet.logicBlock_text();me._cozinha_e_sala_de_jantari.logicBlock_visible();me._bsico.logicBlock_text();me._microondas.logicBlock_text();me._louas_e_talheres.logicBlock_text();me._frigobar0.logicBlock_text();me._fogo.logicBlock_text();me._chaleira_de_gua_quente.logicBlock_text();me._no_inclusoi.logicBlock_visible();me._cmeras_de_segurana_na_propriedade.logicBlock_text();me._mquina_de_lavar.logicBlock_text();me._secadora.logicBlock_text();me._frigobar.logicBlock_text();me._detector_de_fumaa.logicBlock_text();me._alarme_de_monxido_de_carbono.logicBlock_text();me._aquecimento_central.logicBlock_text();me._entretenimentoi.logicBlock_visible();me._conexo_ethernet.logicBlock_text();me._hdtv_com_tv_a_cabo_premium.logicBlock_text();me._internet_e_escritrioi.logicBlock_visible();me._wifi0.logicBlock_text();me._espao_de_trabalho_exclusivo1.logicBlock_text();me._privacidade_e_seguranai.logicBlock_visible();me._tranca_na_porta_do_quarto.logicBlock_text();me._estacionamento_e_instalaesi.logicBlock_visible();me._garagem_residencial_gratuita_na_propriedade.logicBlock_text();me._climatizaoi.logicBlock_visible();me._ventilador_de_teto.logicBlock_text();me._banheiroi.logicBlock_visible();me._secador_de_cabelo.logicBlock_text();me._xampu.logicBlock_text();me._condicionador.logicBlock_text();me._sabonete_para_o_corpo.logicBlock_text();me._agua_quente.logicBlock_text();me._serviosi.logicBlock_visible();me._wifi.logicBlock_text();me._espao_de_trabalho_exclusivo0.logicBlock_text();me._sobre_o_lugar.logicBlock_visible();me._sobre_o_lugar0.logicBlock_text();me._espao_de_trabalho_exclusivo.logicBlock_text();me._durante_sua_estadia.logicBlock_text();me._banheiro_.logicBlock_text();me._quarto_e_lavanderiab.logicBlock_text();me._entretenimentob.logicBlock_text();me._climatizaob.logicBlock_text();me._privacidade_e_seguranab.logicBlock_text();me._internet_e_escritriob.logicBlock_text();me._cozinha_e_sala_de_jantarb.logicBlock_text();me._estacionamento_e_instalaesb.logicBlock_text();me._serviosb.logicBlock_text();me._no_inclusob.logicBlock_text();me._banheiro_menu0.logicBlock_text();me._cozinha_menu.logicBlock_text();me._frigobar_menu.logicBlock_text();me._quarto_menu.logicBlock_text();me._quarto_menu.logicBlock_textcolor();me._garagem_menu.logicBlock_text();me._info_menu.logicBlock_text();me._tt_unmute.logicBlock_text();me._iniciar0.logicBlock_text();me._indicativo2.logicBlock_text();me._banheiro_menu.logicBlock_text(); });
+	player.addListener('changenode', function(args) { me._quarto_e_lavanderiai.logicBlock_visible();me._bsico0.logicBlock_text();me._cabides.logicBlock_text();me._roupa_de_cama.logicBlock_text();me._cobertores_e_travesseiros_extras.logicBlock_text();me._varal_para_secar_roupas.logicBlock_text();me._local_para_guardar_as_roupas_closet.logicBlock_text();me._cozinha_e_sala_de_jantari.logicBlock_visible();me._bsico.logicBlock_text();me._microondas.logicBlock_text();me._louas_e_talheres.logicBlock_text();me._frigobar0.logicBlock_text();me._fogo.logicBlock_text();me._chaleira_de_gua_quente.logicBlock_text();me._no_inclusoi.logicBlock_visible();me._cmeras_de_segurana_na_propriedade.logicBlock_text();me._mquina_de_lavar.logicBlock_text();me._secadora.logicBlock_text();me._frigobar.logicBlock_text();me._detector_de_fumaa.logicBlock_text();me._alarme_de_monxido_de_carbono.logicBlock_text();me._aquecimento_central.logicBlock_text();me._entretenimentoi.logicBlock_visible();me._conexo_ethernet.logicBlock_text();me._hdtv_com_tv_a_cabo_premium.logicBlock_text();me._internet_e_escritrioi.logicBlock_visible();me._wifi0.logicBlock_text();me._espao_de_trabalho_exclusivo1.logicBlock_text();me._privacidade_e_seguranai.logicBlock_visible();me._tranca_na_porta_do_quarto.logicBlock_text();me._estacionamento_e_instalaesi.logicBlock_visible();me._garagem_residencial_gratuita_na_propriedade.logicBlock_text();me._climatizaoi.logicBlock_visible();me._ventilador_de_teto.logicBlock_text();me._banheiroi.logicBlock_visible();me._secador_de_cabelo.logicBlock_text();me._xampu.logicBlock_text();me._condicionador.logicBlock_text();me._sabonete_para_o_corpo.logicBlock_text();me._agua_quente.logicBlock_text();me._serviosi.logicBlock_visible();me._wifi.logicBlock_text();me._espao_de_trabalho_exclusivo0.logicBlock_text();me._banheiro_.logicBlock_text();me._quarto_e_lavanderiab.logicBlock_text();me._entretenimentob.logicBlock_text();me._climatizaob.logicBlock_text();me._privacidade_e_seguranab.logicBlock_text();me._internet_e_escritriob.logicBlock_text();me._cozinha_e_sala_de_jantarb.logicBlock_text();me._estacionamento_e_instalaesb.logicBlock_text();me._serviosb.logicBlock_text();me._no_inclusob.logicBlock_text();me._sobre_o_lugar.logicBlock_visible();me._sobre_o_lugar0.logicBlock_text();me._espao_de_trabalho_exclusivo.logicBlock_text();me._durante_sua_estadia.logicBlock_text();me._banheiro_menu0.logicBlock_text();me._cozinha_menu.logicBlock_text();me._frigobar_menu.logicBlock_text();me._quarto_menu.logicBlock_text();me._quarto_menu.logicBlock_textcolor();me._garagem_menu.logicBlock_text();me._info_menu.logicBlock_text();me._iniciar0.logicBlock_text();me._indicativo2.logicBlock_text();me._banheiro_menu.logicBlock_text(); });
 	player.addListener('vrchanged', function(args) { me._enter_vr.logicBlock_visible(); });
 	player.addListener('varchanged_INFO', function(args) { me._quarto_e_lavanderiai.logicBlock_visible();me._cozinha_e_sala_de_jantari.logicBlock_visible();me._no_inclusoi.logicBlock_visible();me._entretenimentoi.logicBlock_visible();me._internet_e_escritrioi.logicBlock_visible();me._privacidade_e_seguranai.logicBlock_visible();me._estacionamento_e_instalaesi.logicBlock_visible();me._climatizaoi.logicBlock_visible();me._banheiroi.logicBlock_visible();me._serviosi.logicBlock_visible();me._sobre_o_lugar.logicBlock_visible(); });
-	player.addListener('varchanged_POR', function(args) { me._bsico0.logicBlock_text();me._cabides.logicBlock_text();me._roupa_de_cama.logicBlock_text();me._cobertores_e_travesseiros_extras.logicBlock_text();me._varal_para_secar_roupas.logicBlock_text();me._local_para_guardar_as_roupas_closet.logicBlock_text();me._bsico.logicBlock_text();me._microondas.logicBlock_text();me._louas_e_talheres.logicBlock_text();me._frigobar0.logicBlock_text();me._fogo.logicBlock_text();me._chaleira_de_gua_quente.logicBlock_text();me._cmeras_de_segurana_na_propriedade.logicBlock_text();me._mquina_de_lavar.logicBlock_text();me._secadora.logicBlock_text();me._frigobar.logicBlock_text();me._detector_de_fumaa.logicBlock_text();me._alarme_de_monxido_de_carbono.logicBlock_text();me._aquecimento_central.logicBlock_text();me._conexo_ethernet.logicBlock_text();me._hdtv_com_tv_a_cabo_premium.logicBlock_text();me._wifi0.logicBlock_text();me._espao_de_trabalho_exclusivo1.logicBlock_text();me._tranca_na_porta_do_quarto.logicBlock_text();me._garagem_residencial_gratuita_na_propriedade.logicBlock_text();me._ventilador_de_teto.logicBlock_text();me._secador_de_cabelo.logicBlock_text();me._xampu.logicBlock_text();me._condicionador.logicBlock_text();me._sabonete_para_o_corpo.logicBlock_text();me._agua_quente.logicBlock_text();me._wifi.logicBlock_text();me._espao_de_trabalho_exclusivo0.logicBlock_text();me._sobre_o_lugar0.logicBlock_text();me._espao_de_trabalho_exclusivo.logicBlock_text();me._durante_sua_estadia.logicBlock_text();me._banheiro_.logicBlock_text();me._quarto_e_lavanderiab.logicBlock_text();me._entretenimentob.logicBlock_text();me._climatizaob.logicBlock_text();me._privacidade_e_seguranab.logicBlock_text();me._internet_e_escritriob.logicBlock_text();me._cozinha_e_sala_de_jantarb.logicBlock_text();me._estacionamento_e_instalaesb.logicBlock_text();me._serviosb.logicBlock_text();me._no_inclusob.logicBlock_text();me._banheiro_menu0.logicBlock_text();me._cozinha_menu.logicBlock_text();me._frigobar_menu.logicBlock_text();me._quarto_menu.logicBlock_text();me._quarto_menu.logicBlock_textcolor();me._garagem_menu.logicBlock_text();me._info_menu.logicBlock_text();me._tt_unmute.logicBlock_text();me._iniciar0.logicBlock_text();me._indicativo2.logicBlock_text();me._banheiro_menu.logicBlock_text(); });
-	player.addListener('varchanged_ENG', function(args) { me._bsico0.logicBlock_text();me._cabides.logicBlock_text();me._roupa_de_cama.logicBlock_text();me._cobertores_e_travesseiros_extras.logicBlock_text();me._varal_para_secar_roupas.logicBlock_text();me._local_para_guardar_as_roupas_closet.logicBlock_text();me._bsico.logicBlock_text();me._microondas.logicBlock_text();me._louas_e_talheres.logicBlock_text();me._frigobar0.logicBlock_text();me._fogo.logicBlock_text();me._chaleira_de_gua_quente.logicBlock_text();me._cmeras_de_segurana_na_propriedade.logicBlock_text();me._mquina_de_lavar.logicBlock_text();me._secadora.logicBlock_text();me._frigobar.logicBlock_text();me._detector_de_fumaa.logicBlock_text();me._alarme_de_monxido_de_carbono.logicBlock_text();me._aquecimento_central.logicBlock_text();me._conexo_ethernet.logicBlock_text();me._hdtv_com_tv_a_cabo_premium.logicBlock_text();me._wifi0.logicBlock_text();me._espao_de_trabalho_exclusivo1.logicBlock_text();me._tranca_na_porta_do_quarto.logicBlock_text();me._garagem_residencial_gratuita_na_propriedade.logicBlock_text();me._ventilador_de_teto.logicBlock_text();me._secador_de_cabelo.logicBlock_text();me._xampu.logicBlock_text();me._condicionador.logicBlock_text();me._sabonete_para_o_corpo.logicBlock_text();me._agua_quente.logicBlock_text();me._wifi.logicBlock_text();me._espao_de_trabalho_exclusivo0.logicBlock_text();me._sobre_o_lugar0.logicBlock_text();me._espao_de_trabalho_exclusivo.logicBlock_text();me._durante_sua_estadia.logicBlock_text();me._banheiro_.logicBlock_text();me._quarto_e_lavanderiab.logicBlock_text();me._entretenimentob.logicBlock_text();me._climatizaob.logicBlock_text();me._privacidade_e_seguranab.logicBlock_text();me._internet_e_escritriob.logicBlock_text();me._cozinha_e_sala_de_jantarb.logicBlock_text();me._estacionamento_e_instalaesb.logicBlock_text();me._serviosb.logicBlock_text();me._no_inclusob.logicBlock_text();me._banheiro_menu0.logicBlock_text();me._cozinha_menu.logicBlock_text();me._frigobar_menu.logicBlock_text();me._quarto_menu.logicBlock_text();me._quarto_menu.logicBlock_textcolor();me._garagem_menu.logicBlock_text();me._info_menu.logicBlock_text();me._tt_unmute.logicBlock_text();me._iniciar0.logicBlock_text();me._indicativo2.logicBlock_text();me._banheiro_menu.logicBlock_text(); });
-	player.addListener('varchanged_ESP', function(args) { me._bsico0.logicBlock_text();me._cabides.logicBlock_text();me._roupa_de_cama.logicBlock_text();me._cobertores_e_travesseiros_extras.logicBlock_text();me._varal_para_secar_roupas.logicBlock_text();me._local_para_guardar_as_roupas_closet.logicBlock_text();me._bsico.logicBlock_text();me._microondas.logicBlock_text();me._louas_e_talheres.logicBlock_text();me._frigobar0.logicBlock_text();me._fogo.logicBlock_text();me._chaleira_de_gua_quente.logicBlock_text();me._cmeras_de_segurana_na_propriedade.logicBlock_text();me._mquina_de_lavar.logicBlock_text();me._secadora.logicBlock_text();me._frigobar.logicBlock_text();me._detector_de_fumaa.logicBlock_text();me._alarme_de_monxido_de_carbono.logicBlock_text();me._aquecimento_central.logicBlock_text();me._conexo_ethernet.logicBlock_text();me._hdtv_com_tv_a_cabo_premium.logicBlock_text();me._wifi0.logicBlock_text();me._espao_de_trabalho_exclusivo1.logicBlock_text();me._tranca_na_porta_do_quarto.logicBlock_text();me._garagem_residencial_gratuita_na_propriedade.logicBlock_text();me._ventilador_de_teto.logicBlock_text();me._secador_de_cabelo.logicBlock_text();me._xampu.logicBlock_text();me._condicionador.logicBlock_text();me._sabonete_para_o_corpo.logicBlock_text();me._agua_quente.logicBlock_text();me._wifi.logicBlock_text();me._espao_de_trabalho_exclusivo0.logicBlock_text();me._sobre_o_lugar0.logicBlock_text();me._espao_de_trabalho_exclusivo.logicBlock_text();me._durante_sua_estadia.logicBlock_text();me._banheiro_.logicBlock_text();me._quarto_e_lavanderiab.logicBlock_text();me._entretenimentob.logicBlock_text();me._climatizaob.logicBlock_text();me._privacidade_e_seguranab.logicBlock_text();me._internet_e_escritriob.logicBlock_text();me._cozinha_e_sala_de_jantarb.logicBlock_text();me._estacionamento_e_instalaesb.logicBlock_text();me._serviosb.logicBlock_text();me._no_inclusob.logicBlock_text();me._banheiro_menu0.logicBlock_text();me._cozinha_menu.logicBlock_text();me._frigobar_menu.logicBlock_text();me._quarto_menu.logicBlock_text();me._quarto_menu.logicBlock_textcolor();me._garagem_menu.logicBlock_text();me._info_menu.logicBlock_text();me._tt_unmute.logicBlock_text();me._iniciar0.logicBlock_text();me._indicativo2.logicBlock_text();me._banheiro_menu.logicBlock_text(); });
+	player.addListener('varchanged_POR', function(args) { me._bsico0.logicBlock_text();me._cabides.logicBlock_text();me._roupa_de_cama.logicBlock_text();me._cobertores_e_travesseiros_extras.logicBlock_text();me._varal_para_secar_roupas.logicBlock_text();me._local_para_guardar_as_roupas_closet.logicBlock_text();me._bsico.logicBlock_text();me._microondas.logicBlock_text();me._louas_e_talheres.logicBlock_text();me._frigobar0.logicBlock_text();me._fogo.logicBlock_text();me._chaleira_de_gua_quente.logicBlock_text();me._cmeras_de_segurana_na_propriedade.logicBlock_text();me._mquina_de_lavar.logicBlock_text();me._secadora.logicBlock_text();me._frigobar.logicBlock_text();me._detector_de_fumaa.logicBlock_text();me._alarme_de_monxido_de_carbono.logicBlock_text();me._aquecimento_central.logicBlock_text();me._conexo_ethernet.logicBlock_text();me._hdtv_com_tv_a_cabo_premium.logicBlock_text();me._wifi0.logicBlock_text();me._espao_de_trabalho_exclusivo1.logicBlock_text();me._tranca_na_porta_do_quarto.logicBlock_text();me._garagem_residencial_gratuita_na_propriedade.logicBlock_text();me._ventilador_de_teto.logicBlock_text();me._secador_de_cabelo.logicBlock_text();me._xampu.logicBlock_text();me._condicionador.logicBlock_text();me._sabonete_para_o_corpo.logicBlock_text();me._agua_quente.logicBlock_text();me._wifi.logicBlock_text();me._espao_de_trabalho_exclusivo0.logicBlock_text();me._banheiro_.logicBlock_text();me._quarto_e_lavanderiab.logicBlock_text();me._entretenimentob.logicBlock_text();me._climatizaob.logicBlock_text();me._privacidade_e_seguranab.logicBlock_text();me._internet_e_escritriob.logicBlock_text();me._cozinha_e_sala_de_jantarb.logicBlock_text();me._estacionamento_e_instalaesb.logicBlock_text();me._serviosb.logicBlock_text();me._no_inclusob.logicBlock_text();me._sobre_o_lugar0.logicBlock_text();me._espao_de_trabalho_exclusivo.logicBlock_text();me._durante_sua_estadia.logicBlock_text();me._banheiro_menu0.logicBlock_text();me._cozinha_menu.logicBlock_text();me._frigobar_menu.logicBlock_text();me._quarto_menu.logicBlock_text();me._quarto_menu.logicBlock_textcolor();me._garagem_menu.logicBlock_text();me._info_menu.logicBlock_text();me._iniciar0.logicBlock_text();me._indicativo2.logicBlock_text();me._banheiro_menu.logicBlock_text(); });
+	player.addListener('varchanged_ENG', function(args) { me._bsico0.logicBlock_text();me._cabides.logicBlock_text();me._roupa_de_cama.logicBlock_text();me._cobertores_e_travesseiros_extras.logicBlock_text();me._varal_para_secar_roupas.logicBlock_text();me._local_para_guardar_as_roupas_closet.logicBlock_text();me._bsico.logicBlock_text();me._microondas.logicBlock_text();me._louas_e_talheres.logicBlock_text();me._frigobar0.logicBlock_text();me._fogo.logicBlock_text();me._chaleira_de_gua_quente.logicBlock_text();me._cmeras_de_segurana_na_propriedade.logicBlock_text();me._mquina_de_lavar.logicBlock_text();me._secadora.logicBlock_text();me._frigobar.logicBlock_text();me._detector_de_fumaa.logicBlock_text();me._alarme_de_monxido_de_carbono.logicBlock_text();me._aquecimento_central.logicBlock_text();me._conexo_ethernet.logicBlock_text();me._hdtv_com_tv_a_cabo_premium.logicBlock_text();me._wifi0.logicBlock_text();me._espao_de_trabalho_exclusivo1.logicBlock_text();me._tranca_na_porta_do_quarto.logicBlock_text();me._garagem_residencial_gratuita_na_propriedade.logicBlock_text();me._ventilador_de_teto.logicBlock_text();me._secador_de_cabelo.logicBlock_text();me._xampu.logicBlock_text();me._condicionador.logicBlock_text();me._sabonete_para_o_corpo.logicBlock_text();me._agua_quente.logicBlock_text();me._wifi.logicBlock_text();me._espao_de_trabalho_exclusivo0.logicBlock_text();me._banheiro_.logicBlock_text();me._quarto_e_lavanderiab.logicBlock_text();me._entretenimentob.logicBlock_text();me._climatizaob.logicBlock_text();me._privacidade_e_seguranab.logicBlock_text();me._internet_e_escritriob.logicBlock_text();me._cozinha_e_sala_de_jantarb.logicBlock_text();me._estacionamento_e_instalaesb.logicBlock_text();me._serviosb.logicBlock_text();me._no_inclusob.logicBlock_text();me._sobre_o_lugar0.logicBlock_text();me._espao_de_trabalho_exclusivo.logicBlock_text();me._durante_sua_estadia.logicBlock_text();me._banheiro_menu0.logicBlock_text();me._cozinha_menu.logicBlock_text();me._frigobar_menu.logicBlock_text();me._quarto_menu.logicBlock_text();me._quarto_menu.logicBlock_textcolor();me._garagem_menu.logicBlock_text();me._info_menu.logicBlock_text();me._iniciar0.logicBlock_text();me._indicativo2.logicBlock_text();me._banheiro_menu.logicBlock_text(); });
+	player.addListener('varchanged_ESP', function(args) { me._bsico0.logicBlock_text();me._cabides.logicBlock_text();me._roupa_de_cama.logicBlock_text();me._cobertores_e_travesseiros_extras.logicBlock_text();me._varal_para_secar_roupas.logicBlock_text();me._local_para_guardar_as_roupas_closet.logicBlock_text();me._bsico.logicBlock_text();me._microondas.logicBlock_text();me._louas_e_talheres.logicBlock_text();me._frigobar0.logicBlock_text();me._fogo.logicBlock_text();me._chaleira_de_gua_quente.logicBlock_text();me._cmeras_de_segurana_na_propriedade.logicBlock_text();me._mquina_de_lavar.logicBlock_text();me._secadora.logicBlock_text();me._frigobar.logicBlock_text();me._detector_de_fumaa.logicBlock_text();me._alarme_de_monxido_de_carbono.logicBlock_text();me._aquecimento_central.logicBlock_text();me._conexo_ethernet.logicBlock_text();me._hdtv_com_tv_a_cabo_premium.logicBlock_text();me._wifi0.logicBlock_text();me._espao_de_trabalho_exclusivo1.logicBlock_text();me._tranca_na_porta_do_quarto.logicBlock_text();me._garagem_residencial_gratuita_na_propriedade.logicBlock_text();me._ventilador_de_teto.logicBlock_text();me._secador_de_cabelo.logicBlock_text();me._xampu.logicBlock_text();me._condicionador.logicBlock_text();me._sabonete_para_o_corpo.logicBlock_text();me._agua_quente.logicBlock_text();me._wifi.logicBlock_text();me._espao_de_trabalho_exclusivo0.logicBlock_text();me._banheiro_.logicBlock_text();me._quarto_e_lavanderiab.logicBlock_text();me._entretenimentob.logicBlock_text();me._climatizaob.logicBlock_text();me._privacidade_e_seguranab.logicBlock_text();me._internet_e_escritriob.logicBlock_text();me._cozinha_e_sala_de_jantarb.logicBlock_text();me._estacionamento_e_instalaesb.logicBlock_text();me._serviosb.logicBlock_text();me._no_inclusob.logicBlock_text();me._sobre_o_lugar0.logicBlock_text();me._espao_de_trabalho_exclusivo.logicBlock_text();me._durante_sua_estadia.logicBlock_text();me._banheiro_menu0.logicBlock_text();me._cozinha_menu.logicBlock_text();me._frigobar_menu.logicBlock_text();me._quarto_menu.logicBlock_text();me._quarto_menu.logicBlock_textcolor();me._garagem_menu.logicBlock_text();me._info_menu.logicBlock_text();me._iniciar0.logicBlock_text();me._indicativo2.logicBlock_text();me._banheiro_menu.logicBlock_text(); });
 	player.addListener('changenode', function(args) { me.callChildLogicBlocksHotspot_ht_node_changenode(); });
 	player.addListener('configloaded', function(args) { me.callChildLogicBlocksHotspot_ht_node_configloaded(); });
 	player.addListener('mouseover', function(args) { me.callChildLogicBlocksHotspot_ht_node_mouseover(); });
